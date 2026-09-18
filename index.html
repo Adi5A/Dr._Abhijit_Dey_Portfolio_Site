@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Abhijit Dey - Home</title>
+    <style>
+        :root {
+            --primary-color: #003366;
+            --text-color: #333;
+            --bg-color: #fff;
+            --light-bg: #f4f6f9;
+            --border-color: #e0e0e0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            line-height: 1.7;
+            text-align: justify;
+        }
+
+        header {
+            background-color: #fff;
+            padding: 1.5rem 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1.5rem;
+            box-sizing: border-box;
+        }
+
+        .header-text {
+            text-align: center;
+            flex: 1;
+        }
+
+        header h1 {
+            color: var(--primary-color);
+            margin: 0;
+            font-size: 2.0rem;
+            font-weight: 600;
+        }
+
+        header p {
+            margin: 5px 0 0;
+            font-size: 1.05rem;
+            color: #555;
+        }
+
+        #profile {
+            width: 110px;
+            height: 110px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 2px solid var(--primary-color);
+            flex-shrink: 0;
+        }
+
+        #logo {
+            height: 90px;
+            width: auto;
+            object-fit: contain;
+            flex-shrink: 0;
+        }
+
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .header-text {
+                order: 2;
+            }
+
+            #profile {
+                order: 1;
+            }
+
+            #logo {
+                order: 3;
+            }
+        }
+
+        nav {
+            background-color: var(--primary-color);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        nav ul li a {
+            display: block;
+            padding: 1rem 1.2rem;
+            text-decoration: none;
+            color: #fff;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: background 0.3s;
+        }
+
+        nav ul li a:hover,
+        nav ul li a.active {
+            background-color: #002244;
+        }
+
+        .container {
+            max-width: 1180px;
+            margin: 2rem auto;
+            padding: 0 1.5rem;
+            min-height: 60vh;
+        }
+
+        /* Two Column Layout: Left (Contact & Map) + Right (Bio & Main Content) */
+        .home-layout {
+            display: flex;
+            gap: 2.5rem;
+            align-items: flex-start;
+        }
+
+        .home-sidebar {
+            width: 320px;
+            flex-shrink: 0;
+        }
+
+        .home-main {
+            flex: 1;
+            min-width: 0;
+        }
+
+        h2 {
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--light-bg);
+            padding-bottom: 0.5rem;
+            margin-top: 2rem;
+        }
+
+        .home-main h2:first-of-type {
+            margin-top: 0;
+        }
+
+        .bio-section {
+            margin-bottom: 2rem;
+        }
+
+        ul.custom-list {
+            padding-left: 1.2rem;
+        }
+
+        ul.custom-list li {
+            margin-bottom: 0.8rem;
+        }
+
+        .links a,
+        .contact-card a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .links a:hover,
+        .contact-card a:hover {
+            text-decoration: underline;
+        }
+
+        .cv-btn {
+            display: block;
+            text-align: center;
+            padding: 10px 18px;
+            background-color: var(--primary-color);
+            color: #ffffff !important;
+            text-decoration: none !important;
+            border-radius: 4px;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: background-color 0.3s;
+            margin-top: 1rem;
+        }
+
+        .cv-btn:hover {
+            background-color: #002244;
+        }
+
+        /* Contact Sidebar Card */
+        .contact-card {
+            background-color: var(--light-bg);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-card h3 {
+            color: var(--primary-color);
+            margin: 0 0 1rem 0;
+            font-size: 1.3rem;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 0.4rem;
+        }
+
+        .contact-card ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .contact-card ul li {
+            margin-bottom: 0.8rem;
+            font-size: 0.95rem;
+            word-break: break-word;
+            text-align: left;
+        }
+
+        .qr-card {
+            text-align: center;
+            background: #fff;
+            padding: 0.8rem;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+            margin-top: 1.2rem;
+        }
+
+        .qr-card img {
+            width: 110px;
+            height: 110px;
+            object-fit: contain;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .qr-card span {
+            display: block;
+            font-size: 0.75rem;
+            color: #666;
+            margin-top: 0.4rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* Map Card */
+        .map-card {
+            background: #fff;
+            padding: 0.6rem;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+            box-sizing: border-box;
+            text-align: center;
+            margin-top: 1.2rem;
+        }
+
+        .map-card iframe {
+            width: 100%;
+            height: 220px;
+            border: 0;
+            border-radius: 4px;
+            display: block;
+        }
+
+        .map-card span {
+            display: block;
+            font-size: 0.75rem;
+            color: #666;
+            margin-top: 0.5rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        @media (max-width: 900px) {
+            .home-layout {
+                flex-direction: column;
+            }
+
+            .home-sidebar {
+                width: 100%;
+            }
+
+            .map-card iframe {
+                height: 250px;
+            }
+        }
+
+        footer {
+            background-color: var(--light-bg);
+            text-align: center;
+            padding: 1.5rem;
+            margin-top: 3rem;
+            border-top: 1px solid var(--border-color);
+            color: #666;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <img id="profile" src="assets/profile.jpg" alt="Dr. Abhijit Dey">
+        <div class="header-text">
+            <h1>Dr. Abhijit Dey</h1>
+            <p>Assistant Professor, Department of Mechanical Engineering<br>National Institute of Technology (NIT)
+                Jamshedpur</p>
+        </div>
+        <img id="logo" src="assets/logo.png" alt="NIT Jamshedpur Logo">
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="research-interests.html">Research Interests</a></li>
+            <li><a href="professional-outreach.html">Professional & Outreach Activities</a></li>
+            <li><a href="research-accomplishments.html">Research Accomplishments</a></li>
+            <li><a href="research-team.html">Research Team</a></li>
+            <li><a href="administrative-activities.html">Administrative Activities</a></li>
+            <li><a href="updates-events.html">Updates & Events</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <div class="home-layout">
+            <!-- Left Side: Contact Information & Google Map -->
+            <aside class="home-sidebar">
+                <div class="contact-card">
+                    <h3>Contact</h3>
+                    <ul>
+                        <li><strong>Office:</strong><br>G10-1, Diamond Jubilee Lecture Hall Complex, National Institute of Technology Jamshedpur, P.O: NIT Jamshedpur, Jharkhand, India, PIN: 831014</li>
+                        <li><strong>Institute Website:</strong><br><a href="https://www.nitjsr.ac.in" target="_blank">www.nitjsr.ac.in</a></li>
+                        <li><strong>Institute Profile:</strong><br><a href="https://www.nitjsr.ac.in/people/profile/ME145" target="_blank">nitjsr.ac.in/people/profile/ME145</a></li>
+                        <li><strong>Email:</strong><br><a href="mailto:abhijit.me@nitjsr.ac.in">abhijit.me@nitjsr.ac.in</a></li>
+                        <li><strong>Phone:</strong><br>+91 8899778875</li>
+                        <li><strong>Google Scholar ID:</strong><br><a href="https://scholar.google.com/citations?user=jfVyeVsAAAAJ&hl=en" target="_blank">jfVyeVsAAAAJ</a></li>
+                        <li><strong>Web of Science:</strong><br><a href="https://www.webofscience.com/wos/author/record/CAA-5342-2022" target="_blank">CAA-5342-2022</a></li>
+                        <li><strong>ORCID ID:</strong><br><a href="https://orcid.org/0000-0002-2126-7295" target="_blank">0000-0002-2126-7295</a></li>
+                        <li><strong>Scopus Author ID:</strong><br><a href="https://www.scopus.com/authid/detail.uri?authorId=57190169284" target="_blank">57190169284</a></li>
+                        <li><strong>Vidwan ID:</strong><br><a href="https://nitjsr.irins.org/profile/140335" target="_blank">140335</a></li>
+                    </ul>
+
+                    <a href="assets/CV_Abhijit_Dey.pdf" target="_blank" class="cv-btn">📄 View / Download CV</a>
+
+                    <div class="qr-card">
+                        <img src="assets/cv_qr_code.png" alt="Scan QR Code for CV">
+                        <span>Scan for CV</span>
+                    </div>
+
+                    <div class="map-card">
+                        <iframe aria-label="Map, National Institute of Technology, Jamshedpur" src="https://maps-api-ssl.google.com/maps?hl=en-US&amp;ll=22.777073,86.144193&amp;output=embed&amp;q=Adityapur,+Jamshedpur,+Jharkhand+831014,+India+(National+Institute+of+Technology,+Jamshedpur)&amp;z=17" allowfullscreen loading="lazy"></iframe>
+                        <span>NIT Jamshedpur</span>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- Right Side: Biography & Professional Experience -->
+            <main class="home-main">
+                <div class="bio-section">
+                    <h2>About</h2>
+                    <p>Dr. Abhijit Dey is a dedicated researcher and educator in mechanical engineering, currently working as an
+                        Assistant Professor in the Department of Mechanical Engineering at NIT Jamshedpur. He completed his
+                        B.Tech from NIT Agartala in 2011, followed by an M.Tech and Ph.D. in 2014 and 2017, respectively. Over
+                        the past eight years, he has taught at esteemed institutions such as NIT Silchar, MITS Madanapalle, and
+                        NIT Srinagar before joining NIT Jamshedpur in 2024. Dr. Dey is deeply involved in research, with a
+                        strong focus on developing thin films, coatings, and ceramic matrix composites (CMCs) for applications
+                        in biomedical and aerospace engineering. His expertise also extends to sensor materials and
+                        radar-absorbing materials development for specialized industrial uses. Additionally, he has contributed
+                        significantly to the study of the machinability of advanced ceramics, CMCs, and MMCs. With an extensive
+                        publication record, Dr. Dey has authored more than 80 research papers in peer-reviewed journals and
+                        conferences. He also holds over nine patents, industrial designs, and trademarks. At present, he
+                        supervises Nine Ph.D. scholars, two of whom have successfully completed their research, along with
+                        guiding five M.Tech theses. His leadership extends to five ongoing research projects as a Principal
+                        Investigator (PI) or Co-PI, and he has successfully completed four consultancy projects focused on
+                        net-zero energy solutions using geothermal approaches. Beyond his research and teaching, Dr. Dey
+                        actively contributes to the academic community as a guest editor for three reputed peer-reviewed
+                        journals and regularly reviews articles for several international journals. His dedication to advancing
+                        materials science and engineering continues to impact both academia and industry.</p>
+
+                    <p class="links">
+                        <strong>Academic Profiles:</strong>
+                        <a href="https://scholar.google.com/citations?user=jfVyeVsAAAAJ&hl=en" target="_blank">Google Scholar</a> |
+                        <a href="https://www.nitjsr.ac.in/people/profile/ME145" target="_blank">NIT Jamshedpur Profile (ME145)</a> |
+                        <a href="https://nitjsr.irins.org/profile/140335" target="_blank">IRINS / Vidwan (140335)</a> |
+                        <a href="https://www.webofscience.com/wos/author/record/CAA-5342-2022" target="_blank">Web of Science</a>
+                    </p>
+                </div>
+
+                <h2>Professional Qualifications and Experience</h2>
+                <ul class="custom-list">
+                    <li><strong>Assistant Professor</strong> - Department of Mechanical Engineering, National Institute of
+                        Technology (NIT) Jamshedpur (2024 - Present)</li>
+                    <li><strong>Former Faculty / Researcher</strong> - National Institute of Technology (NIT) Srinagar</li>
+                    <li><strong>Former Faculty / Researcher</strong> - National Institute of Technology (NIT) Silchar</li>
+                    <li><strong>Former Faculty / Researcher</strong> - MITS Madanapalle, Andhra Pradesh</li>
+                    <li><strong>Ph.D.</strong> - Mechanical Engineering (2017)</li>
+                    <li><strong>M.Tech</strong> - (2014)</li>
+                    <li><strong>B.Tech</strong> - National Institute of Technology (NIT) Agartala (2011)</li>
+                </ul>
+
+                <h2>Core Research Fields & Competencies</h2>
+                <ul class="custom-list">
+                    <li><strong>Composite Materials:</strong> Ceramic Matrix Composites (CMCs), SiC, Al₂O₃, and ZrB₂ based composites for aerospace & orthopedic applications.</li>
+                    <li><strong>Advanced Machining:</strong> Non-conventional machining, wire-EDM, laser machining, and machinability of advanced ceramics and MMCs.</li>
+                    <li><strong>Composite Thin Films & Coatings:</strong> Gradient and nano-layered coatings via magnetron sputtering, PVD, CVD, and thermal barrier coatings.</li>
+                    <li><strong>Citations:</strong> 1,560+</li>
+                    <li><strong>h-index:</strong> 21</li>
+                    <li><strong>i10-index:</strong> 39</li>
+                </ul>
+            </main>
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        <p>&copy; <span id="year"></span> Dr. Abhijit Dey. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

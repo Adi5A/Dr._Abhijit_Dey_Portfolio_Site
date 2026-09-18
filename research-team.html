@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research Team - Dr. Abhijit Dey</title>
+    <style>
+        :root {
+            --primary-color: #003366;
+            --text-color: #333;
+            --bg-color: #fff;
+            --light-bg: #f4f6f9;
+            --border-color: #e0e0e0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            line-height: 1.7;
+            text-align: justify;
+        }
+
+        header {
+            background-color: #fff;
+            padding: 1.5rem 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1.5rem;
+            box-sizing: border-box;
+        }
+
+        .header-text {
+            text-align: center;
+            flex: 1;
+        }
+
+        header h1 {
+            color: var(--primary-color);
+            margin: 0;
+            font-size: 2.0rem;
+            font-weight: 600;
+        }
+
+        header p {
+            margin: 5px 0 0;
+            font-size: 1.05rem;
+            color: #555;
+        }
+
+        #profile {
+            width: 110px;
+            height: 110px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 2px solid var(--primary-color);
+            flex-shrink: 0;
+        }
+
+        #logo {
+            height: 90px;
+            width: auto;
+            object-fit: contain;
+            flex-shrink: 0;
+        }
+
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .header-text {
+                order: 2;
+            }
+
+            #profile {
+                order: 1;
+            }
+
+            #logo {
+                order: 3;
+            }
+        }
+
+        nav {
+            background-color: var(--primary-color);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        nav ul li a {
+            display: block;
+            padding: 1rem 1.2rem;
+            text-decoration: none;
+            color: #fff;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: background 0.3s;
+        }
+
+        nav ul li a:hover,
+        nav ul li a.active {
+            background-color: #002244;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+            min-height: 60vh;
+        }
+
+        h2 {
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--light-bg);
+            padding-bottom: 0.5rem;
+            margin-top: 2rem;
+        }
+
+        .bio-section {
+            margin-bottom: 2rem;
+        }
+
+        .candidates-list {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .candidate-card {
+            display: flex;
+            align-items: flex-start;
+            gap: 24px;
+        }
+
+        .candidate-card img {
+            width: 160px;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 6px;
+            flex-shrink: 0;
+        }
+
+        .candidate-info {
+            margin: 0;
+            padding-left: 20px;
+        }
+
+        .candidate-info li {
+            margin-bottom: 0.6rem;
+        }
+
+        .links a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .links a:hover {
+            text-decoration: underline;
+        }
+
+        li strong {
+            font-size: 1.17rem;
+        }
+
+        footer {
+            background-color: var(--light-bg);
+            text-align: center;
+            padding: 1.5rem;
+            margin-top: 3rem;
+            border-top: 1px solid var(--border-color);
+            color: #666;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <img id="profile" src="assets/profile.jpg" alt="Dr. Abhijit Dey">
+        <div class="header-text">
+            <h1>Dr. Abhijit Dey</h1>
+            <p>Assistant Professor, Department of Mechanical Engineering<br>National Institute of Technology (NIT)
+                Jamshedpur</p>
+        </div>
+        <img id="logo" src="assets/logo.png" alt="NIT Jamshedpur Logo">
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="research-interests.html">Research Interests</a></li>
+            <li><a href="professional-outreach.html">Professional & Outreach Activities</a></li>
+            <li><a href="research-accomplishments.html">Research Accomplishments</a></li>
+            <li><a href="research-team.html" class="active">Research Team</a></li>
+            <li><a href="administrative-activities.html">Administrative Activities</a></li>
+            <li><a href="updates-events.html">Updates & Events</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <h2>Research Team</h2>
+
+        <li><strong>Doctoral Thesis:</strong> 03 Awarded, 1 Submitted, 07 Ongoing</li>
+        <li><strong>Master’s Thesis:</strong> 5 Completed, 01 Ongoing</li>
+        <li><strong>Bachelor’s Thesis:</strong> 13 Completed</li>
+
+        <h3>Doctoral candidates</h3>
+        <div class="candidates-list">
+
+            <!-- Basant Lal -->
+            <div class="candidate-card">
+                <img src="assets/doctoral-candidates/basant_lal.jpg" alt="Basant Lal">
+                <ul class="candidate-info">
+                    <li><strong>Basant Lal</strong></li>
+                    <li>Status: Completed</li>
+                    <li>Research area: Ti<sub>6</sub>Al<sub>4</sub>V/TiC composites/Biomaterials</li>
+                </ul>
+            </div>
+
+            <!-- Zahid Mukhtar -->
+            <div class="candidate-card">
+                <img src="assets/doctoral-candidates/zahid_mukhtar.jpg" alt="Zahid Mukhtar">
+                <ul class="candidate-info">
+                    <li><strong>Zahid Mukhtar</strong></li>
+                    <li>Status: ongoing</li>
+                    <li>Research area: Functionally graded coatings/Bio-Materials</li>
+                </ul>
+            </div>
+
+            <!-- Rohit Bharti -->
+            <div class="candidate-card">
+                <img src="assets/doctoral-candidates/rohit_bharti.jpg" alt="Rohit Bharti">
+                <ul class="candidate-info">
+                    <li><strong>Rohit Bharti</strong></li>
+                    <li>Status: Completed</li>
+                    <li>Research area: Radar Absorbing Coatings/ Military stealth Applications</li>
+                </ul>
+            </div>
+
+            <!-- Khurshed Ahmad Sheikh -->
+            <div class="candidate-card">
+                <img src="assets/doctoral-candidates/khurshed_ahmad_sheikh.jpg" alt="Khurshed Ahmad Sheikh">
+                <ul class="candidate-info">
+                    <li><strong>Khurshed Ahmad Sheikh</strong></li>
+                    <li>Status: Completed</li>
+                    <li>Research area: Metal matrix composites</li>
+                </ul>
+            </div>
+
+            <!-- Uzma Iqbal -->
+            <div class="candidate-card">
+                <img src="assets/doctoral-candidates/uzma_iqbal.jpg" alt="Uzma Iqbal">
+                <ul class="candidate-info">
+                    <li><strong>Uzma Iqbal</strong></li>
+                    <li>Date of joining: June 2023</li>
+                    <li>Status: ongoing</li>
+                    <li>Research area: FSP of Magnesium alloys</li>
+                </ul>
+            </div>
+
+            <!-- Zahoor Ahmad Ahanger -->
+            <div class="candidate-card">
+                <img src="assets/doctoral-candidates/zahoor_ahmad_ahanger.jpg" alt="Zahoor Ahmad Ahanger">
+                <ul class="candidate-info">
+                    <li><strong>Zahoor Ahmad Ahanger</strong></li>
+                    <li>Date of joining: June 2023</li>
+                    <li>Status: ongoing</li>
+                    <li>Research area: composites coating/BioMaterials</li>
+                </ul>
+            </div>
+
+            <!-- Tauseef Abdullah -->
+            <div class="candidate-card">
+                <img src="assets/doctoral-candidates/tauseef_abdullah.jpg" alt="Tauseef Abdullah">
+                <ul class="candidate-info">
+                    <li><strong>Tauseef Abdullah</strong></li>
+                    <li>Date of joining: June 2023</li>
+                    <li>Status: ongoing</li>
+                    <li>Research area: Ti<sub>6</sub>Al<sub>4</sub>V matrix composite processed by powder bed Fusion
+                        (PBF)/ Metal additive
+                        manufacturing</li>
+                </ul>
+            </div>
+
+            <!-- Saikat Mandal -->
+            <div class="candidate-card">
+                <img src="assets/doctoral-candidates/saikat_mandal.jpg" alt="Saikat Mandal">
+                <ul class="candidate-info">
+                    <li><strong>Saikat Mandal</strong></li>
+                    <li>Date of joining: Jan 2026</li>
+                    <li>Status: ongoing</li>
+                    <li>Research area: DMLS/ Metal additive manufacturing</li>
+                </ul>
+            </div>
+
+            <!-- Gigasga -->
+            <div class="candidate-card">
+                <img src="assets/doctoral-candidates/gigasga.jpg" alt="Gigasga">
+                <ul class="candidate-info">
+                    <li><strong>Gigasga</strong></li>
+                    <li>Date of joining: Jan 2025</li>
+                    <li>Status: ongoing</li>
+                    <li>Research area: Radar Absorbing Coatings</li>
+                </ul>
+            </div>
+
+            <!-- Prasant Sourav -->
+            <div class="candidate-card">
+                <img src="assets/doctoral-candidates/prasant_sourav.jpg" alt="Prasant Sourav">
+                <ul class="candidate-info">
+                    <li><strong>Prasant Sourav</strong></li>
+                    <li>Date of joining: June 2025</li>
+                    <li>Status: ongoing</li>
+                    <li>Research area: Biomaterials/Ti<sub>6</sub>Al<sub>4</sub>V alloys</li>
+                </ul>
+            </div>
+
+            <!-- Subhodip Sukal -->
+            <div class="candidate-card">
+                <img src="assets/doctoral-candidates/subhodip_sukal.jpg" alt="Subhodip Sukal">
+                <ul class="candidate-info">
+                    <li><strong>Subhodip Sukal</strong></li>
+                    <li>Date of joining: Jan 2026</li>
+                    <li>Status: ongoing</li>
+                    <li>Research area: Radar Absorbing Coatings</li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        <p>&copy; <span id="year"></span> Dr. Abhijit Dey. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

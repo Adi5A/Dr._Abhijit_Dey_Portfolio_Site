@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research Accomplishments - Dr. Abhijit Dey</title>
+    <style>
+        :root {
+            --primary-color: #003366;
+            --text-color: #333;
+            --bg-color: #fff;
+            --light-bg: #f4f6f9;
+            --border-color: #e0e0e0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            line-height: 1.7;
+            text-align: justify;
+        }
+
+        header {
+            background-color: #fff;
+            padding: 1.5rem 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1.5rem;
+            box-sizing: border-box;
+        }
+
+        .header-text {
+            text-align: center;
+            flex: 1;
+        }
+
+        header h1 {
+            color: var(--primary-color);
+            margin: 0;
+            font-size: 2.0rem;
+            font-weight: 600;
+        }
+
+        header p {
+            margin: 5px 0 0;
+            font-size: 1.05rem;
+            color: #555;
+        }
+
+        #profile {
+            width: 110px;
+            height: 110px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 2px solid var(--primary-color);
+            flex-shrink: 0;
+        }
+
+        #logo {
+            height: 90px;
+            width: auto;
+            object-fit: contain;
+            flex-shrink: 0;
+        }
+
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .header-text {
+                order: 2;
+            }
+
+            #profile {
+                order: 1;
+            }
+
+            #logo {
+                order: 3;
+            }
+        }
+
+        nav {
+            background-color: var(--primary-color);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        nav ul li a {
+            display: block;
+            padding: 1rem 1.2rem;
+            text-decoration: none;
+            color: #fff;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: background 0.3s;
+        }
+
+        nav ul li a:hover,
+        nav ul li a.active {
+            background-color: #002244;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+            min-height: 60vh;
+        }
+
+        h2 {
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--light-bg);
+            padding-bottom: 0.5rem;
+            margin-top: 2rem;
+        }
+
+        h3 {
+            color: #004080;
+            margin-top: 1.5rem;
+        }
+
+        h4 {
+            color: var(--primary-color);
+            font-size: 1.3rem;
+            margin-top: 1.4rem;
+            margin-bottom: 0.6rem;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 0.3rem;
+        }
+
+        .quartile-heading {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: #004080;
+            margin: 1rem 0 0.5rem 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 2px 10px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            border-radius: 4px;
+            color: #fff;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .badge-q1 {
+            background-color: #1b5e20;
+        }
+
+        .badge-q2 {
+            background-color: #e65100;
+        }
+
+        .badge-q3 {
+            background-color: #4a148c;
+        }
+
+        .bio-section {
+            margin-bottom: 2rem;
+        }
+
+        .journal-list {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 20px;
+        }
+
+        .journal-list img {
+            width: 100%;
+            aspect-ratio: 1 / 1;
+            object-fit: contain;
+            background-color: #f9f9f9;
+            display: block;
+        }
+
+        .journal-list img:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 18px rgba(0, 0, 0, 0.18);
+            cursor: pointer;
+        }
+
+        ul.custom-list {
+            padding-left: 1.2rem;
+        }
+
+        ul.custom-list li {
+            margin-bottom: 0.8rem;
+        }
+
+        .links a,
+        ul.custom-list li a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .links a:hover,
+        ul.custom-list li a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            background-color: var(--light-bg);
+            text-align: center;
+            padding: 1.5rem;
+            margin-top: 3rem;
+            border-top: 1px solid var(--border-color);
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        /* Publications Summary Box */
+        .summary-box {
+            background-color: var(--light-bg);
+            border: 1px solid var(--border-color);
+            border-left: 4px solid var(--primary-color);
+            border-radius: 6px;
+            padding: 1.5rem;
+            margin: 1.5rem 0 2rem 0;
+        }
+
+        .summary-box h3 {
+            margin-top: 0;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 0.4rem;
+        }
+
+        .summary-content {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 2rem;
+        }
+
+        .summary-col p {
+            margin: 0.4rem 0;
+            line-height: 1.5;
+            font-size: 0.95rem;
+        }
+
+        .summary-col a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .summary-col a:hover {
+            text-decoration: underline;
+        }
+
+        /* Top Cited Articles List */
+        ol.top-cited-list {
+            padding-left: 1.5rem;
+            margin-bottom: 2.5rem;
+        }
+
+        ol.top-cited-list li {
+            margin-bottom: 0.9rem;
+            line-height: 1.5;
+        }
+
+        .citation-count {
+            display: inline-block;
+            background-color: #e8f0fe;
+            color: #1a73e8;
+            font-weight: 700;
+            font-size: 0.8rem;
+            padding: 2px 8px;
+            border-radius: 12px;
+            margin-left: 6px;
+            border: 1px solid #cce0ff;
+            white-space: nowrap;
+        }
+
+        @media (max-width: 768px) {
+            .summary-content {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <img id="profile" src="assets/profile.jpg" alt="Dr. Abhijit Dey">
+        <div class="header-text">
+            <h1>Dr. Abhijit Dey</h1>
+            <p>Assistant Professor, Department of Mechanical Engineering<br>National Institute of Technology (NIT)
+                Jamshedpur</p>
+        </div>
+        <img id="logo" src="assets/logo.png" alt="NIT Jamshedpur Logo">
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="research-interests.html">Research Interests</a></li>
+            <li><a href="professional-outreach.html">Professional & Outreach Activities</a></li>
+            <li><a href="research-accomplishments.html" class="active">Research Accomplishments</a></li>
+            <li><a href="research-team.html">Research Team</a></li>
+            <li><a href="administrative-activities.html">Administrative Activities</a></li>
+            <li><a href="updates-events.html">Updates & Events</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <h2>Research Accomplishments</h2>
+
+        <!-- Publications Summary (Referenced from Vishesh Ranjan Kar layout) -->
+        <div class="summary-box">
+            <h3>Publications Summary</h3>
+            <div class="summary-content">
+                <div class="summary-col">
+                    <p><strong>Total Publications:</strong> 100+</p>
+                    <p><strong>Total Citations:</strong> 1,560+</p>
+                    <p><strong>h-index:</strong> 21 &nbsp;|&nbsp; <strong>i10-index:</strong> 39</p>
+                    <p><strong>Journal Articles:</strong> 80+ in Reputed International Journals (Q1, Q2, Q3)</p>
+                    <p><strong>Conference Proceedings & Presentations:</strong> 20+</p>
+                    <p><strong>Patents:</strong> 09 (Granted / Published across India, Germany, South Africa)</p>
+                    <p><strong>Funded Projects:</strong> 05 Sponsored Projects + 04 Consultancies</p>
+                    <p><strong>Doctoral Scholars:</strong> 09 Supervised (2 Completed, 7 Ongoing)</p>
+                </div>
+                <div class="summary-col">
+                    <p><strong>Google Scholar ID:</strong> <a href="https://scholar.google.com/citations?user=jfVyeVsAAAAJ&hl=en" target="_blank">jfVyeVsAAAAJ</a></p>
+                    <p><strong>Scopus Author ID:</strong> <a href="https://www.scopus.com/authid/detail.uri?authorId=57190169284" target="_blank">57190169284</a></p>
+                    <p><strong>ORCID ID:</strong> <a href="https://orcid.org/0000-0002-2126-7295" target="_blank">0000-0002-2126-7295</a></p>
+                    <p><strong>Web of Science Researcher ID:</strong> <a href="https://www.webofscience.com/wos/author/record/CAA-5342-2022" target="_blank">CAA-5342-2022</a></p>
+                    <p><strong>Vidwan / IRINS ID:</strong> <a href="https://nitjsr.irins.org/profile/140335" target="_blank">140335</a></p>
+                </div>
+            </div>
+        </div>
+
+        <h3>Most Cited (Top 25) Articles in International Journals</h3>
+        <ol class="custom-list top-cited-list">
+            <li><a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=jfVyeVsAAAAJ&citation_for_view=jfVyeVsAAAAJ:qjMakFHDy7sC" target="_blank">A Dey, KM Pandey, “Magnesium metal matrix composites-a review,” <em>Rev. Adv. Mater. Sci 42 (1), 58-67</em> (2015).</a> <span class="citation-count">249 Citations</span></li>
+            <li><a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=jfVyeVsAAAAJ&citation_for_view=jfVyeVsAAAAJ:0EnyYjriUFMC" target="_blank">G Manohar, A Dey, KM Pandey, SR Maity, “Fabrication of metal matrix composites by powder metallurgy: a review,” <em>AIP conference proceedings 1952 (1), 020041</em> (2018).</a> <span class="citation-count">130 Citations</span></li>
+            <li><a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=jfVyeVsAAAAJ&citation_for_view=jfVyeVsAAAAJ:IjCSPb-OGe4C" target="_blank">A Dey, KM Pandey, “Characterization of fly ash and its reinforcement effect on metal matrix composites: A review,” <em>Rev. Adv. Mater. Sci 44 (2), 168-181</em> (2016).</a> <span class="citation-count">77 Citations</span></li>
+            <li><a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=jfVyeVsAAAAJ&citation_for_view=jfVyeVsAAAAJ:Y0pCki6q_DkC" target="_blank">A Dey, S Debnath, KM Pandey, “Optimization of electrical discharge machining process parameters for Al6061/cenosphere composite using grey-based hybrid approach,” <em>Transactions of Nonferrous Metals Society of China 27 (5), 998-1010</em> (2017).</a> <span class="citation-count">75 Citations</span></li>
+            <li><a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=jfVyeVsAAAAJ&citation_for_view=jfVyeVsAAAAJ:4JMBOYKVnBMC" target="_blank">A Das, SK Patel, M Arakha, A Dey, BB Biswal, “Processing of hardened steel by MQL technique using nano cutting fluids,” <em>Materials and Manufacturing Processes 36 (3), 316-328</em> (2021).</a> <span class="citation-count">52 Citations</span></li>
+            <li><a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=jfVyeVsAAAAJ&citation_for_view=jfVyeVsAAAAJ:O3NaXMp0MMsC" target="_blank">AK Dey, A Dey, R Goswami, “Adsorption characteristics of methyl red dye by Na2CO3-treated jute fibre using multi-criteria decision making approach,” <em>Applied Water Science 12 (8), 179</em> (2022).</a> <span class="citation-count">51 Citations</span></li>
+            <li><a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=jfVyeVsAAAAJ&citation_for_view=jfVyeVsAAAAJ:hqOjcs7Dif8C" target="_blank">A Dey, KM Pandey, “Selection of optimal processing condition during WEDM of compocasted AA6061/cenosphere AMCs based on grey-based hybrid approach,” <em>Materials and Manufacturing Processes 33 (14), 1549-1558</em> (2018).</a> <span class="citation-count">48 Citations</span></li>
+            <li><a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=jfVyeVsAAAAJ&citation_for_view=jfVyeVsAAAAJ:maZDTaKrznsC" target="_blank">MM Khan, A Dey, MI Hajam, “Experimental investigation and optimization of dry sliding wear test parameters of aluminum based composites,” <em>Silicon 14 (8), 4009-4026</em> (2022).</a> <span class="citation-count">46 Citations</span></li>
+            <li><a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=jfVyeVsAAAAJ&citation_for_view=jfVyeVsAAAAJ:j3f4tGmQtD8C" target="_blank">AD Amit Kumar Dey, “Selection of optimal processing condition during removal of Reactive Red 195 by NaOH treated jute fibre using adsorption,” <em>Groundwater for Sustainable Development</em> (2020).</a> <span class="citation-count">43 Citations</span></li>
+            <li><a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=jfVyeVsAAAAJ&citation_for_view=jfVyeVsAAAAJ:8k81kl-MbHgC" target="_blank">A Dey, KM Pandey, “Wear behaviour of Mg alloys and their composites–a review,” <em>International journal of materials research 109 (11), 1050-1070</em> (2018).</a> <span class="citation-count">41 Citations</span></li>
+            <li><a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=jfVyeVsAAAAJ&citation_for_view=jfVyeVsAAAAJ:4OULZ7Gr8RgC" target="_blank">A Das, SR Das, JP Panda, A Dey, KK Gajrani, N Somani, NK Gupta, “Machine learning-based modeling and optimization in hard turning of AISI D6 steel with advanced AlTiSiN-coated carbide inserts to predict surface roughness and other machining …,” <em>Surface Review and Letters 29 (10), 2250137</em> (2022).</a> <span class="citation-count">40 Citations</span></li>
+            <li><a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=jfVyeVsAAAAJ&citation_for_view=jfVyeVsAAAAJ:MXK_kJrjxJIC" target="_blank">N Niraj, KM Pandey, A Dey, “Tribological behaviour of Magnesium Metal Matrix Composites reinforced with fly ash cenosphere,” <em>Materials Today: Proceedings 5 (9), 20138-20144</em> (2018).</a> <span class="citation-count">39 Citations</span></li>
+            <li><a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=jfVyeVsAAAAJ&citation_for_view=jfVyeVsAAAAJ:3fE2CSJIrl8C" target="_blank">AK Yadav, KM Pandey, A Dey, “Aluminium metal matrix composite with rice husk as reinforcement: a review,” <em>Materials Today: Proceedings 5 (9), 20130-20137</em> (2018).</a> <span class="citation-count">38 Citations</span></li>
+            <li><a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=jfVyeVsAAAAJ&citation_for_view=jfVyeVsAAAAJ:W7OEmFMy1HYC" target="_blank">A Dey, M Debnath, KM Pandey, “Analysis of effect of machining parameters during electrical discharge machining using Taguchi-based multi-objective PSO,” <em>International Journal of Computational Intelligence and Applications 16 (02 …</em> (2017).</a> <span class="citation-count">36 Citations</span></li>
+            <li><a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=jfVyeVsAAAAJ&citation_for_view=jfVyeVsAAAAJ:Tyk-4Ss8FVUC" target="_blank">A Dey, KM Pandey, “Wire electrical discharge machining characteristics of AA6061/cenosphere as-cast aluminum matrix composites,” <em>Materials and Manufacturing Processes 33 (12), 1346-1353</em> (2018).</a> <span class="citation-count">33 Citations</span></li>
+            <li><a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=jfVyeVsAAAAJ&citation_for_view=jfVyeVsAAAAJ:WF5omc3nYNoC" target="_blank">A Dey, VRR Bandi, KM Pandey, “Wire electrical discharge machining characteristics of AA6061/cenosphere aluminium matrix composites using RSM,” <em>Materials Today: Proceedings 5 (1), 1278-1285</em> (2018).</a> <span class="citation-count">31 Citations</span></li>
+            <li><a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=jfVyeVsAAAAJ&citation_for_view=jfVyeVsAAAAJ:iH-uZ7U-co4C" target="_blank">AK Dey, U Kumar, A Dey, “Use of response surface methodology for the optimization of process parameters for the removal of Congo Red by NaOH treated jute fibre,” <em>Desalination and Water Treatment 115, 300-314</em> (2018).</a> <span class="citation-count">28 Citations</span></li>
+            <li><a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=jfVyeVsAAAAJ&citation_for_view=jfVyeVsAAAAJ:ufrVoPGSRksC" target="_blank">M Rahman, A Dey, KM Pandey, “Machinability of cenosphere particulate–reinforced AA6061 aluminium alloy prepared by compocasting,” <em>Proceedings of the Institution of Mechanical Engineers, Part B: Journal of …</em> (2018).</a> <span class="citation-count">28 Citations</span></li>
+            <li><a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=jfVyeVsAAAAJ&citation_for_view=jfVyeVsAAAAJ:p2g8aNsByqUC" target="_blank">Z Mukhtar, A Dey, N Kundan, “Optimized surface engineering of Ti-6Al-4V: Comprehensive coating evaluation for biomedical applications,” <em>Surfaces and Interfaces 56, 105735</em> (2025).</a> <span class="citation-count">24 Citations</span></li>
+            <li><a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=jfVyeVsAAAAJ&citation_for_view=jfVyeVsAAAAJ:u9iWguZQMMsC" target="_blank">R Bharti, MM Butt, A Dey, “Dynamic emissivity control in MXene-based materials for next-generation thermal camouflage,” <em>Journal of Porous Materials 32 (2), 399-423</em> (2025).</a> <span class="citation-count">24 Citations</span></li>
+            <li><a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=jfVyeVsAAAAJ&cstart=20&pagesize=80&citation_for_view=jfVyeVsAAAAJ:vRqMK49ujn8C" target="_blank">KA Sheikh, MM Khan, A Dey, MF Wani, “Advancements in surface engineering: a comprehensive review of functionally graded coatings for biomaterial implants,” <em>Results in Surfaces and Interfaces 19, 100509</em> (2025).</a> <span class="citation-count">22 Citations</span></li>
+            <li><a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=jfVyeVsAAAAJ&cstart=20&pagesize=80&citation_for_view=jfVyeVsAAAAJ:blknAaTinKkC" target="_blank">MM Khan, A Dey, “Hybrid MCDM approach for examining the high-stress abrasive wear behaviour of in situ ZA-27/TiCp MMCs,” <em>Materials Chemistry and Physics 277, 125319</em> (2022).</a> <span class="citation-count">21 Citations</span></li>
+            <li><a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=jfVyeVsAAAAJ&cstart=20&pagesize=80&citation_for_view=jfVyeVsAAAAJ:TFP_iSt0sucC" target="_blank">MM Khan, A Dey, “Selection of optimal processing condition during abrasive wear of in-situ ZA-37/TiCp composites using MCDM technique,” <em>Ceramics International 47 (14), 20090-20107</em> (2021).</a> <span class="citation-count">21 Citations</span></li>
+            <li><a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=jfVyeVsAAAAJ&cstart=20&pagesize=80&citation_for_view=jfVyeVsAAAAJ:ns9cj8rnVeAC" target="_blank">MM Khan, A Dey, “Microstructure-abrasive wear correlation of in situ ZA27/TiC composites,” <em>Ceramics International 48 (16), 22928-22942</em> (2022).</a> <span class="citation-count">20 Citations</span></li>
+            <li><a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=jfVyeVsAAAAJ&cstart=20&pagesize=80&citation_for_view=jfVyeVsAAAAJ:NMxIlDl6LWMC" target="_blank">AK Dey, A Dey, “Selection of optimal processing condition during removal of methylene blue dye using treated betel nut fibre implementing desirability based RSM approach,” <em>Response surface methodology in Engineering Science</em> (2021).</a> <span class="citation-count">20 Citations</span></li>
+        </ol>
+
+        <h3>Publications (Year-Wise)</h3>
+
+        <h4>2026</h4>
+        <div class="quartile-heading"><span class="badge badge-q1">Q1</span> High Impact</div>
+        <ul class="custom-list">
+            <li><a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=jfVyeVsAAAAJ&cstart=20&pagesize=80&citation_for_view=jfVyeVsAAAAJ:XiVPGOgt02cC" target="_blank">R Bharti, M Mursaleen, A Dey, “Microstructural and Optical–Infrared Properties of Ag–TiN–Al2O3 Multilayers Fabricated by Magnetron Sputtering,” <em>Ceramics International</em> (2026).</a> <span style="font-size:0.8rem; color:#666; font-weight:600;">[Citations: 2]</span></li>
+            <li><a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=jfVyeVsAAAAJ&cstart=20&pagesize=80&citation_for_view=jfVyeVsAAAAJ:eMMeJKvmdy0C" target="_blank">AD Zahid Mukhtar, Nitika Kundan, “Synthesis and characterization of functionally graded TaN/CrN/ZrN thin films on Ti-6Al-4 V,” <em>Surface and Coatings Technology 526, 133338</em> (2026).</a> <span style="font-size:0.8rem; color:#666; font-weight:600;">[Citations: 1]</span></li>
+            <li><a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=jfVyeVsAAAAJ&cstart=20&pagesize=80&citation_for_view=jfVyeVsAAAAJ:WA5NYHcadZ8C" target="_blank">Z Mukhtar, A Dey, N Kundan, “Influence of Substrate Temperature on the Structural and Mechanical Behavior of Functionally Graded TaN/CrN/ZrN Coatings on Ti-6Al-4V,” <em>Results in Surfaces and Interfaces, 100784</em> (2026).</a> <span style="font-size:0.8rem; color:#666; font-weight:600;">[Citations: 1]</span></li>
+            <li><a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=jfVyeVsAAAAJ&cstart=20&pagesize=80&citation_for_view=jfVyeVsAAAAJ:dTyEYWd-f8wC" target="_blank">Z Mukhtar, N Kundan, A Dey, “TaN/CrN/ZrN stepwise functionally graded thin-film coatings on Ti-6Al-4V for load-bearing biomedical applications: Microstructure, wettability, and nanomechanical properties,” <em>Biomaterials Advances, 215072</em> (2026).</a></li>
+        </ul>
+
+        <div class="quartile-heading"><span class="badge badge-q2">Q2</span></div>
+        <ul class="custom-list">
+            <li><a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=jfVyeVsAAAAJ&cstart=20&pagesize=80&citation_for_view=jfVyeVsAAAAJ:sSrBHYA8nusC" target="_blank">ZA Ahanger, SS Saleem, A Dey, “Physical vapour deposition technologies of functionally graded coatings,” <em>Proceedings of the institution of mechanical engineers, part L: journal of …</em> (2026).</a> <span style="font-size:0.8rem; color:#666; font-weight:600;">[Citations: 11]</span></li>
+            <li><a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=jfVyeVsAAAAJ&cstart=20&pagesize=80&citation_for_view=jfVyeVsAAAAJ:uWQEDVKXjbEC" target="_blank">Z Mukhtar, A Dey, N Kundan, FA Mir, “Advancements in biomedical coatings: A comprehensive review of DC magnetron sputtering on Ti–6Al–4V alloy,” <em>Proceedings of the Institution of Mechanical Engineers, Part J: Journal of …</em> (2026).</a> <span style="font-size:0.8rem; color:#666; font-weight:600;">[Citations: 11]</span></li>
+            <li><a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=jfVyeVsAAAAJ&cstart=20&pagesize=80&citation_for_view=jfVyeVsAAAAJ:V3AGJWp-ZtQC" target="_blank">R Bharti, M Mursaleen, A Dey, “Carbon-based radar-absorbing materials: a comprehensive review of design, properties, and applications,” <em>Radiation Effects and Defects in Solids 181 (7-8), 1264-1287</em> (2026).</a> <span style="font-size:0.8rem; color:#666; font-weight:600;">[Citations: 2]</span></li>
+            <li><a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=jfVyeVsAAAAJ&cstart=20&pagesize=80&citation_for_view=jfVyeVsAAAAJ:Mojj43d5GZwC" target="_blank">R Bharti, M Mursaleen, A Dey, “Microstructure and thermal-infrared performance of Ag/TiN/Al₂O₃ multilayer thin films,” <em>Photonics and Nanostructures-Fundamentals and Applications, 101533</em> (2026).</a> <span style="font-size:0.8rem; color:#666; font-weight:600;">[Citations: 2]</span></li>
+            <li><a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=jfVyeVsAAAAJ&cstart=20&pagesize=80&citation_for_view=jfVyeVsAAAAJ:wbdj-CoPYUoC" target="_blank">B Lal, A Dey, “Advancements in titanium nanocomposites: Microstructure and fretting wear resistance via spark plasma sintering,” <em>International Journal of Minerals, Metallurgy and Materials 33 (1), 265-281</em> (2026).</a> <span style="font-size:0.8rem; color:#666; font-weight:600;">[Citations: 2]</span></li>
+            <li><a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=jfVyeVsAAAAJ&cstart=20&pagesize=80&citation_for_view=jfVyeVsAAAAJ:mvPsJ3kp5DgC" target="_blank">U Iqbal, NZ Khan, A Dey, “Friction and wear characterization of ZE41 magnesium alloy for medical implants,” <em>Proceedings of the Institution of Mechanical Engineers, Part J: Journal of …</em> (2026).</a> <span style="font-size:0.8rem; color:#666; font-weight:600;">[Citations: 1]</span></li>
+            <li><a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=jfVyeVsAAAAJ&cstart=20&pagesize=80&citation_for_view=jfVyeVsAAAAJ:eq2jaN3J8jMC" target="_blank">B Lal, A Dey, U Maurya, A Ali, “ERRATUM—MORPHOLOGY OF WEAR DEBRIS DURING DRY SLIDING OF Ti–6Al–4V ALLOY AT HIGH TEMPERATURE UNDER VACUUM ENVIRONMENTS,” <em>Surface Review and Letters 33 (06), 2492002</em> (2026).</a> <span style="font-size:0.8rem; color:#666; font-weight:600;">[Citations: 1]</span></li>
+            <li><a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=jfVyeVsAAAAJ&cstart=20&pagesize=80&citation_for_view=jfVyeVsAAAAJ:geHnlv5EZngC" target="_blank">A Dey, MM Khan, “Optimizing WEDM Parameters for Aluminum Metal Matrix Composites Using Hybrid PSO-TOPSIS Approach,” <em>Journal of Advanced Manufacturing Systems 25 (03), 581-601</em> (2026).</a> <span style="font-size:0.8rem; color:#666; font-weight:600;">[Citations: 1]</span></li>
+            <li><a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=jfVyeVsAAAAJ&cstart=20&pagesize=80&citation_for_view=jfVyeVsAAAAJ:SP6oXDckpogC" target="_blank">B Lal, A Dey, U Maurya, A Ali, “MORPHOLOGY OF WEAR DEBRIS DURING DRY SLIDING OF Ti6Al4V/TiC COMPOSITE AT ELEVATED TEMPERATURES IN VACUUM CONDITIONS,” <em>Surface Review and Letters 33 (08), 2550044</em> (2026).</a></li>
+            <li><a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=jfVyeVsAAAAJ&cstart=20&pagesize=80&citation_for_view=jfVyeVsAAAAJ:_B80troHkn4C" target="_blank">R Bharti, M Mursaleen, A Dey, “Tailoring multispectral infrared camouflage via vacuum-annealed Ag+ TiN/TiN/Al₂O₃ thin films,” <em>Canadian Metallurgical Quarterly, 1-11</em> (2026).</a></li>
+            <li><a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=jfVyeVsAAAAJ&cstart=20&pagesize=80&citation_for_view=jfVyeVsAAAAJ:tkaPQYYpVKoC" target="_blank">MQU Ain, A Dey, MF Wani, R Sehgal, MM Khan, “Functionally graded WC-Cr3C2-Ni coatings on Ni-C263: microstructural design and mechanical reliability,” <em>Physica Scripta 101 (22), 225002</em> (2026).</a></li>
+        </ul>
+
+        <div class="quartile-heading"><span class="badge badge-q3">Q3</span></div>
+        <ul class="custom-list">
+            <li><a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=jfVyeVsAAAAJ&cstart=20&pagesize=80&citation_for_view=jfVyeVsAAAAJ:WqliGbK-hY8C" target="_blank">R Bharti, M Mursaleen, A Dey, “A review of FDM methods, microstructure, and structure–property relationships in polymer composites,” <em>Advanced Composite Materials, 1-100</em> (2026).</a></li>
+            <li><a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=jfVyeVsAAAAJ&cstart=20&pagesize=80&citation_for_view=jfVyeVsAAAAJ:5awf1xo2G04C" target="_blank">R Bharti, MM Butt, A Dey, “Microstructure and optical–infrared properties of vacuum-annealed Ag–TiN–Al2O3 coatings,” <em>Surface Innovations, 1-12</em> (2026).</a></li>
+            <li><a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=jfVyeVsAAAAJ&cstart=20&pagesize=80&citation_for_view=jfVyeVsAAAAJ:PELIpwtuRlgC" target="_blank">B Lal, SK Jain, A Dey, PS Rathee, Q Murtaza, “Thermo-mechanical simulation of friction stir welding (FSW) via fractal-based CFD approach,” <em>Journal of Adhesion Science and Technology, 1-21</em> (2026).</a></li>
+        </ul>
+
+        <h4>2025</h4>
+        <div class="quartile-heading"><span class="badge badge-q1">Q1</span> High Impact</div>
+        <ul class="custom-list">
+            <li><a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=jfVyeVsAAAAJ&citation_for_view=jfVyeVsAAAAJ:p2g8aNsByqUC" target="_blank">Z Mukhtar, A Dey, N Kundan, “Optimized surface engineering of Ti-6Al-4V: Comprehensive coating evaluation for biomedical applications,” <em>Surfaces and Interfaces 56, 105735</em> (2025).</a> <span style="font-size:0.8rem; color:#666; font-weight:600;">[Citations: 24]</span></li>
+            <li><a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=jfVyeVsAAAAJ&cstart=20&pagesize=80&citation_for_view=jfVyeVsAAAAJ:vRqMK49ujn8C" target="_blank">KA Sheikh, MM Khan, A Dey, MF Wani, “Advancements in surface engineering: a comprehensive review of functionally graded coatings for biomaterial implants,” <em>Results in Surfaces and Interfaces 19, 100509</em> (2025).</a> <span style="font-size:0.8rem; color:#666; font-weight:600;">[Citations: 22]</span></li>
+            <li><a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=jfVyeVsAAAAJ&cstart=20&pagesize=80&citation_for_view=jfVyeVsAAAAJ:tS2w5q8j5-wC" target="_blank">Z Mukhtar, N Kundan, A Dey, “Development of functionally graded films and coatings for biomaterials: Methods, properties, and challenges–A comprehensive review,” <em>Tribology International 209, 110714</em> (2025).</a> <span style="font-size:0.8rem; color:#666; font-weight:600;">[Citations: 11]</span></li>
+            <li><a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=jfVyeVsAAAAJ&cstart=20&pagesize=80&citation_for_view=jfVyeVsAAAAJ:B3FOqHPlNUQC" target="_blank">B Lal, MF Wani, A Dey, A Singh, “In-vitro analysis of TC4 alloy reinforced with inert ceramics for biomedical applications synthesized using spark plasma sintering,” <em>Tribology International 210, 110744</em> (2025).</a> <span style="font-size:0.8rem; color:#666; font-weight:600;">[Citations: 3]</span></li>
+            <li><a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=jfVyeVsAAAAJ&cstart=20&pagesize=80&citation_for_view=jfVyeVsAAAAJ:3s1wT3WcHBgC" target="_blank">B Lal, A Dey, MF Wani, “Influence of TiCp ceramic reinforcement on Ti6Al4V alloy matrix via spark plasma sintering technique,” <em>Advances in Materials and Processing Technologies 11 (1), 589-607</em> (2025).</a> <span style="font-size:0.8rem; color:#666; font-weight:600;">[Citations: 3]</span></li>
+            <li><a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=jfVyeVsAAAAJ&cstart=20&pagesize=80&citation_for_view=jfVyeVsAAAAJ:KxtntwgDAa4C" target="_blank">A Dey, B Lal, AK Dey, SK Jain, “Development of optimum performance model during spark-eroded processing of rheocasted Al6061/Cenosphere MMCs,” <em>Advances in Materials and Processing Technologies 11 (2), 1215-1228</em> (2025).</a></li>
+        </ul>
+
+        <div class="quartile-heading"><span class="badge badge-q2">Q2</span></div>
+        <ul class="custom-list">
+            <li><a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=jfVyeVsAAAAJ&citation_for_view=jfVyeVsAAAAJ:u9iWguZQMMsC" target="_blank">R Bharti, MM Butt, A Dey, “Dynamic emissivity control in MXene-based materials for next-generation thermal camouflage,” <em>Journal of Porous Materials 32 (2), 399-423</em> (2025).</a> <span style="font-size:0.8rem; color:#666; font-weight:600;">[Citations: 24]</span></li>
+            <li><a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=jfVyeVsAAAAJ&cstart=20&pagesize=80&citation_for_view=jfVyeVsAAAAJ:UxriW0iASnsC" target="_blank">B Lal, A Dey, MF Wani, “Nano-indentation characterization of TiC nano ceramic reinforced Ti-6Al-4V matrix composite,” <em>Journal of Materials Engineering and Performance 34 (11), 10577-10590</em> (2025).</a> <span style="font-size:0.8rem; color:#666; font-weight:600;">[Citations: 8]</span></li>
+            <li><a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=jfVyeVsAAAAJ&cstart=20&pagesize=80&citation_for_view=jfVyeVsAAAAJ:738O_yMBCRsC" target="_blank">R Bharti, M Mursaleen, A Dey, “Optimizing stealth thin films: Nanoindentation and nanoscratch testing for enhanced mechanical properties,” <em>Proceedings of the Institution of Mechanical Engineers, Part E: Journal of …</em> (2025).</a> <span style="font-size:0.8rem; color:#666; font-weight:600;">[Citations: 7]</span></li>
+            <li><a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=jfVyeVsAAAAJ&cstart=20&pagesize=80&citation_for_view=jfVyeVsAAAAJ:kRWSkSYxWN8C" target="_blank">A Dey, SM Hazarika, “Object stiffness discrimination through dynamic time warping and multi-criteria decision-making: A. Dey, SM Hazarika,” <em>International Journal of Intelligent Robotics and Applications 9 (4), 1898-1914</em> (2025).</a> <span style="font-size:0.8rem; color:#666; font-weight:600;">[Citations: 2]</span></li>
+            <li><a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=jfVyeVsAAAAJ&cstart=20&pagesize=80&citation_for_view=jfVyeVsAAAAJ:eJXPG6dFmWUC" target="_blank">R Bharti, M Mursaleen, A Dey, “Thermal and Optical Performance of Ag+ TiN–TiN–Al2O3 Multilayer Coatings for Infrared Camouflage in Aerospace Applications,” <em>Micro and Nanostructures, 208359</em> (2025).</a> <span style="font-size:0.8rem; color:#666; font-weight:600;">[Citations: 2]</span></li>
+            <li><a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=jfVyeVsAAAAJ&cstart=20&pagesize=80&citation_for_view=jfVyeVsAAAAJ:J-pR_7NvFogC" target="_blank">R Bharti, M Mursaleen, A Dey, “Fabrication and optical–infrared performance of Ag+ TiN/TiN/Al₂O₃ multilayer coatings by multi-target magnetron sputtering,” <em>Canadian Metallurgical Quarterly, 1-15</em> (2025).</a> <span style="font-size:0.8rem; color:#666; font-weight:600;">[Citations: 1]</span></li>
+            <li><a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=jfVyeVsAAAAJ&cstart=20&pagesize=80&citation_for_view=jfVyeVsAAAAJ:1qzjygNMrQYC" target="_blank">MQU Ain, A Dey, MF Wani, R Sehgal, MM Khan, “Microstructural and mechanical properties of nickel alloy C-263 for nuclear applications,” <em>Canadian Metallurgical Quarterly, 1-12</em> (2025).</a> <span style="font-size:0.8rem; color:#666; font-weight:600;">[Citations: 1]</span></li>
+            <li><a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=jfVyeVsAAAAJ&cstart=20&pagesize=80&citation_for_view=jfVyeVsAAAAJ:l7t_Zn2s7bgC" target="_blank">B Lal, A Dey, “Advancements in titanium nano-composites: Microstructure and fretting wear resistance via SPS,” <em>International Journal of Minerals, Metallurgy and Materials</em> (2025).</a> <span style="font-size:0.8rem; color:#666; font-weight:600;">[Citations: 1]</span></li>
+            <li><a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=jfVyeVsAAAAJ&cstart=20&pagesize=80&citation_for_view=jfVyeVsAAAAJ:q3oQSFYPqjQC" target="_blank">R Bharti, M Mursaleen, A Dey, “Microstructure evolution and optical–infrared properties of Ag/TiN/Al2O3 multilayers deposited by magnetron sputtering,” <em>Canadian Metallurgical Quarterly, 1-11</em> (2025).</a></li>
+            <li><a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=jfVyeVsAAAAJ&cstart=20&pagesize=80&citation_for_view=jfVyeVsAAAAJ:VOx2b1Wkg3QC" target="_blank">AD Gourav Chaudhary, Amit Kumar Dey, “Delamination prediction on staircased-dispersed tapered laminate composite,” <em>International Applied Mechanics 61 (4)</em> (2025).</a></li>
+        </ul>
+
+        <div class="quartile-heading"><span class="badge badge-q3">Q3</span></div>
+        <ul class="custom-list">
+            <li><a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=jfVyeVsAAAAJ&cstart=20&pagesize=80&citation_for_view=jfVyeVsAAAAJ:D_sINldO8mEC" target="_blank">AD Rohit Bharti, Mohammad Murseen Bhatt, “Advanced multilayer thin films for stealth applications: optical, electrical, and thermal enhancements—a comprehensive study,” <em>journal of Optics, https://doi.org/10.1007/s12596-025-02919</em> (2025).</a> <span style="font-size:0.8rem; color:#666; font-weight:600;">[Citations: 2]</span></li>
+            <li><a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=jfVyeVsAAAAJ&cstart=20&pagesize=80&citation_for_view=jfVyeVsAAAAJ:t6usbXjVLHcC" target="_blank">R Bharti, MM Butt, A Dey, “Engineering Broadband Electromagnetic Wave Absorbers: Innovations in Carbon-Based Composites, Magnetic Alloys, and Impedance Matching,” <em>Russian Journal of Non-Ferrous Metals 66 (6), 414-432</em> (2025).</a> <span style="font-size:0.8rem; color:#666; font-weight:600;">[Citations: 1]</span></li>
+            <li><a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=jfVyeVsAAAAJ&cstart=20&pagesize=80&citation_for_view=jfVyeVsAAAAJ:BrmTIyaxlBUC" target="_blank">R Bharti, M Mursaleen, A Dey, “Preparation of Ag+ TiN/TiN/Al2O3 Multilayer Coatings by Magnetron Sputtering and Their Optical Properties,” <em>Technical Physics 70 (10), 381-386</em> (2025).</a></li>
+        </ul>
+
+        <h4>2024</h4>
+        <div class="quartile-heading"><span class="badge badge-q1">Q1</span> High Impact</div>
+        <ul class="custom-list">
+            <li><a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=jfVyeVsAAAAJ&cstart=20&pagesize=80&citation_for_view=jfVyeVsAAAAJ:u_35RYKgDlwC" target="_blank">B Lal, A Dey, “Fretting wear characteristics of Ti6Al4V/TiC nano composites using response surface method,” <em>Tribology International 193, 109412</em> (2024).</a> <span style="font-size:0.8rem; color:#666; font-weight:600;">[Citations: 19]</span></li>
+            <li><a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=jfVyeVsAAAAJ&cstart=20&pagesize=80&citation_for_view=jfVyeVsAAAAJ:yD5IFk8b50cC" target="_blank">Z Mukhtar, N Kundan, A Dey, “Corrosion and wear characterization of Ti6-Al-4 V alloy: Experimental analysis and performance evaluation,” <em>Tribology International 197, 109745</em> (2024).</a> <span style="font-size:0.8rem; color:#666; font-weight:600;">[Citations: 17]</span></li>
+            <li><a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=jfVyeVsAAAAJ&cstart=20&pagesize=80&citation_for_view=jfVyeVsAAAAJ:xtRiw3GOFMkC" target="_blank">B Lal, A Dey, “Effect of TiC nano-particle on microstructure evolution and tribological behaviour of Ti6Al4V composites fabricated via spark plasma sintering,” <em>Tribology International 197, 109775</em> (2024).</a> <span style="font-size:0.8rem; color:#666; font-weight:600;">[Citations: 12]</span></li>
+        </ul>
+
+        <div class="quartile-heading"><span class="badge badge-q2">Q2</span></div>
+        <ul class="custom-list">
+            <li><a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=jfVyeVsAAAAJ&cstart=20&pagesize=80&citation_for_view=jfVyeVsAAAAJ:P5F9QuxV20EC" target="_blank">KA Sheikh, MM Khan, A Dey, “Optimizing wear resistance of ZA-27 alloy through analytical modelling: A study on the effect of titanium carbide content, load, and speed,” <em>Proceedings of the Institution of Mechanical Engineers, Part J: Journal of …</em> (2024).</a> <span style="font-size:0.8rem; color:#666; font-weight:600;">[Citations: 16]</span></li>
+            <li><a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=jfVyeVsAAAAJ&cstart=20&pagesize=80&citation_for_view=jfVyeVsAAAAJ:zA6iFVUQeVQC" target="_blank">KA Sheikh, MM Khan, A Dey, “Comprehensive analysis of TiC-reinforced ZA-37 alloy matrix composites: microstructural, hardness, and corrosion performance,” <em>Journal of Bio-and Tribo-Corrosion 10 (2), 19</em> (2024).</a> <span style="font-size:0.8rem; color:#666; font-weight:600;">[Citations: 14]</span></li>
+        </ul>
+
+        <div class="quartile-heading"><span class="badge badge-q3">Q3</span></div>
+        <ul class="custom-list">
+            <li><a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=jfVyeVsAAAAJ&cstart=20&pagesize=80&citation_for_view=jfVyeVsAAAAJ:nb7KW1ujOQ8C" target="_blank">R Bharti, MM Butt, A Dey, “Advancements in electromagnetic shielding coatings for aerospace applications: a comprehensive review,” <em>Surface Innovations 12 (8), 440-450</em> (2024).</a> <span style="font-size:0.8rem; color:#666; font-weight:600;">[Citations: 15]</span></li>
+            <li><a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=jfVyeVsAAAAJ&cstart=20&pagesize=80&citation_for_view=jfVyeVsAAAAJ:tOudhMTPpwUC" target="_blank">AD Rohit Bharti, Mohammad Murseen Bhatt, “Nanoindentation and Nanoscratch Testing for the Mechanical Characterization of Stealth Thin Film Coatings,” <em>Russian Journal of Non-Ferrous Metals 65, 151–161</em> (2024).</a> <span style="font-size:0.8rem; color:#666; font-weight:600;">[Citations: 4]</span></li>
+        </ul>
+
+        <div class="quartile-heading"><span class="badge badge-q2" style="background-color:#0277bd;">Peer-Reviewed / Proceedings</span></div>
+        <ul class="custom-list">
+            <li><a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=jfVyeVsAAAAJ&cstart=20&pagesize=80&citation_for_view=jfVyeVsAAAAJ:dfsIfKJdRG4C" target="_blank">A Dwivedi, MM Khan, A Dey, MI Hajam, “Computational analysis of the effect of flow parameters on friction factor and thermal performance of an artificially broken arc rib solar air heater,” <em>International Journal of Computational Materials Science and Engineering 13 …</em> (2024).</a> <span style="font-size:0.8rem; color:#666; font-weight:600;">[Citations: 1]</span></li>
+        </ul>
+
+        <h4>2023</h4>
+        <div class="quartile-heading"><span class="badge badge-q2">Q2</span></div>
+        <ul class="custom-list">
+            <li><a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=jfVyeVsAAAAJ&cstart=20&pagesize=80&citation_for_view=jfVyeVsAAAAJ:J_g5lzvAfSwC" target="_blank">A Dey, PS Rathee, MM Khan, “Computational Fluid Dynamics Approach for Frictional Heat Flow Analysis During Friction Stir Welding Process,” <em>Arabian Journal for Science and Engineering 48 (3), 3749-3763</em> (2023).</a> <span style="font-size:0.8rem; color:#666; font-weight:600;">[Citations: 2]</span></li>
+        </ul>
+
+        <div class="quartile-heading"><span class="badge badge-q2" style="background-color:#0277bd;">Peer-Reviewed / Proceedings</span></div>
+        <ul class="custom-list">
+            <li><a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=jfVyeVsAAAAJ&cstart=20&pagesize=80&citation_for_view=jfVyeVsAAAAJ:LPZeul_q3PIC" target="_blank">MM Khan, A Dey, Z Rubanee, K Mushtaq, MI Hajam, SSU Islam, MB Shah, ..., “Zinc-Based Alloys for Implants,” <em>Recent Advances in Materials and Manufacturing Technology: Select …</em> (2023).</a></li>
+            <li><a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=jfVyeVsAAAAJ&cstart=20&pagesize=80&citation_for_view=jfVyeVsAAAAJ:pqnbT2bcN3wC" target="_blank">AKDA Dey, “Use of electrochemical technique for the removal of lead and nickel from modelled aqueous solution,” <em>European Chemical Bulletin</em> (2023).</a></li>
+        </ul>
+
+        <h4>2022</h4>
+        <div class="quartile-heading"><span class="badge badge-q1">Q1</span> High Impact</div>
+        <ul class="custom-list">
+            <li><a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=jfVyeVsAAAAJ&citation_for_view=jfVyeVsAAAAJ:O3NaXMp0MMsC" target="_blank">AK Dey, A Dey, R Goswami, “Adsorption characteristics of methyl red dye by Na2CO3-treated jute fibre using multi-criteria decision making approach,” <em>Applied Water Science 12 (8), 179</em> (2022).</a> <span style="font-size:0.8rem; color:#666; font-weight:600;">[Citations: 51]</span></li>
+            <li><a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=jfVyeVsAAAAJ&citation_for_view=jfVyeVsAAAAJ:maZDTaKrznsC" target="_blank">MM Khan, A Dey, MI Hajam, “Experimental investigation and optimization of dry sliding wear test parameters of aluminum based composites,” <em>Silicon 14 (8), 4009-4026</em> (2022).</a> <span style="font-size:0.8rem; color:#666; font-weight:600;">[Citations: 46]</span></li>
+            <li><a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=jfVyeVsAAAAJ&cstart=20&pagesize=80&citation_for_view=jfVyeVsAAAAJ:blknAaTinKkC" target="_blank">MM Khan, A Dey, “Hybrid MCDM approach for examining the high-stress abrasive wear behaviour of in situ ZA-27/TiCp MMCs,” <em>Materials Chemistry and Physics 277, 125319</em> (2022).</a> <span style="font-size:0.8rem; color:#666; font-weight:600;">[Citations: 21]</span></li>
+            <li><a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=jfVyeVsAAAAJ&cstart=20&pagesize=80&citation_for_view=jfVyeVsAAAAJ:ns9cj8rnVeAC" target="_blank">MM Khan, A Dey, “Microstructure-abrasive wear correlation of in situ ZA27/TiC composites,” <em>Ceramics International 48 (16), 22928-22942</em> (2022).</a> <span style="font-size:0.8rem; color:#666; font-weight:600;">[Citations: 20]</span></li>
+            <li><a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=jfVyeVsAAAAJ&cstart=20&pagesize=80&citation_for_view=jfVyeVsAAAAJ:70eg2SAEIzsC" target="_blank">AK Dey, A Dey, R Goswami, “Selection of optimal performance characteristics during adsorption of Methyl red dye using sodium carbonate treated jute fibre,” <em>Desalination and Water Treatment 260, 187-202</em> (2022).</a> <span style="font-size:0.8rem; color:#666; font-weight:600;">[Citations: 15]</span></li>
+            <li><a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=jfVyeVsAAAAJ&cstart=20&pagesize=80&citation_for_view=jfVyeVsAAAAJ:GnPB-g6toBAC" target="_blank">AK Dey, A Dey, R Goswami, “Fixed-bed column analysis for adsorption of Acid scarlet 3R dye from aqueous solution onto chemically modified betel nut husk fibre,” <em>Desalination and water treatment 252, 381-390</em> (2022).</a> <span style="font-size:0.8rem; color:#666; font-weight:600;">[Citations: 14]</span></li>
+            <li><a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=jfVyeVsAAAAJ&cstart=20&pagesize=80&citation_for_view=jfVyeVsAAAAJ:M3NEmzRMIkIC" target="_blank">A Dey, MM Khan, “MCD approach for assessing the optimal operating condition during sliding wear characteristics of LM25/SiC AMCs processed by an improved stir casting technique,” <em>Silicon 14 (7), 3673-3691</em> (2022).</a> <span style="font-size:0.8rem; color:#666; font-weight:600;">[Citations: 11]</span></li>
+        </ul>
+
+        <div class="quartile-heading"><span class="badge badge-q2">Q2</span></div>
+        <ul class="custom-list">
+            <li><a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=jfVyeVsAAAAJ&citation_for_view=jfVyeVsAAAAJ:4OULZ7Gr8RgC" target="_blank">A Das, SR Das, JP Panda, A Dey, KK Gajrani, N Somani, NK Gupta, “Machine learning-based modeling and optimization in hard turning of AISI D6 steel with advanced AlTiSiN-coated carbide inserts to predict surface roughness and other machining …,” <em>Surface Review and Letters 29 (10), 2250137</em> (2022).</a> <span style="font-size:0.8rem; color:#666; font-weight:600;">[Citations: 40]</span></li>
+            <li><a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=jfVyeVsAAAAJ&cstart=20&pagesize=80&citation_for_view=jfVyeVsAAAAJ:RYcK_YlVTxYC" target="_blank">B Lal, A Dey, MF Wani, “Effect of frictional heating on mechanically mixed layers during dry sliding contact of Ti-6Al-4V alloys at high temperature in vacuum condition,” <em>Surface Review and Letters 29 (10), 2250127</em> (2022).</a> <span style="font-size:0.8rem; color:#666; font-weight:600;">[Citations: 8]</span></li>
+            <li><a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=jfVyeVsAAAAJ&cstart=20&pagesize=80&citation_for_view=jfVyeVsAAAAJ:abG-DnoFyZgC" target="_blank">A Dey, MM Khan, “Investigation of erosion wear characteristics of LM13/SiC composites implementing box-behnken design methodology,” <em>Journal of Bio-and Tribo-Corrosion 8 (4), 90</em> (2022).</a> <span style="font-size:0.8rem; color:#666; font-weight:600;">[Citations: 3]</span></li>
+            <li><a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=jfVyeVsAAAAJ&cstart=20&pagesize=80&citation_for_view=jfVyeVsAAAAJ:ldfaerwXgEUC" target="_blank">G Chaudhary, A Dey, AK Dey, “Stress and delamination analysis on overlapped-grouped and overlapped-dispersed tapered composite laminate,” <em>International Applied Mechanics 58 (5), 613-622</em> (2022).</a> <span style="font-size:0.8rem; color:#666; font-weight:600;">[Citations: 1]</span></li>
+        </ul>
+
+        <div class="quartile-heading"><span class="badge badge-q3">Q3</span></div>
+        <ul class="custom-list">
+            <li><a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=jfVyeVsAAAAJ&cstart=20&pagesize=80&citation_for_view=jfVyeVsAAAAJ:BqipwSGYUEgC" target="_blank">R Goswami, AK Dey, A Dey, “POSITIVE IMPACT ON ENVIRONMENT DUE TO COVID-19 LOCKDOWNS IN PARTS OF INDIA: A REVIEW.,” <em>Environmental Engineering & Management Journal (EEMJ) 21 (4), 559</em> (2022).</a> <span style="font-size:0.8rem; color:#666; font-weight:600;">[Citations: 9]</span></li>
+        </ul>
+
+        <div class="quartile-heading"><span class="badge badge-q2" style="background-color:#0277bd;">Peer-Reviewed / Proceedings</span></div>
+        <ul class="custom-list">
+            <li><a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=jfVyeVsAAAAJ&cstart=20&pagesize=80&citation_for_view=jfVyeVsAAAAJ:hMod-77fHWUC" target="_blank">B Lal, A Dey, MF Wani, “Prediction of surface roughness during dry sliding wear: characteristics of Ti-6Al-4V alloys,” <em>International Journal of Surface Engineering and Interdisciplinary Materials …</em> (2022).</a> <span style="font-size:0.8rem; color:#666; font-weight:600;">[Citations: 9]</span></li>
+            <li><a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=jfVyeVsAAAAJ&cstart=20&pagesize=80&citation_for_view=jfVyeVsAAAAJ:RGFaLdJalmkC" target="_blank">B Lal, A Dey, MF Wani, “Influence of temperature and applied load on adhesion and abrasion wear characteristics of Ti6Al4V alloy,” <em>International Journal of Surface Engineering and Interdisciplinary Materials …</em> (2022).</a> <span style="font-size:0.8rem; color:#666; font-weight:600;">[Citations: 5]</span></li>
+            <li><a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=jfVyeVsAAAAJ&cstart=20&pagesize=80&citation_for_view=jfVyeVsAAAAJ:cFHS6HbyZ2cC" target="_blank">MM Khan, A Dey, Z Rubanee, K Mushtaq, MI Hajam, SSU Islam, MB Shah, ..., “Evaluation of Microstructure, Mechanical Properties and Biocompatibility of Biodegradable Zinc-Based Alloys for Implants,” <em>International conference on Advances in Materials and Manufacturing, 267-277</em> (2022).</a> <span style="font-size:0.8rem; color:#666; font-weight:600;">[Citations: 2]</span></li>
+        </ul>
+
+        <h4>2021</h4>
+        <div class="quartile-heading"><span class="badge badge-q1">Q1</span> High Impact</div>
+        <ul class="custom-list">
+            <li><a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=jfVyeVsAAAAJ&citation_for_view=jfVyeVsAAAAJ:4JMBOYKVnBMC" target="_blank">A Das, SK Patel, M Arakha, A Dey, BB Biswal, “Processing of hardened steel by MQL technique using nano cutting fluids,” <em>Materials and Manufacturing Processes 36 (3), 316-328</em> (2021).</a> <span style="font-size:0.8rem; color:#666; font-weight:600;">[Citations: 52]</span></li>
+            <li><a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=jfVyeVsAAAAJ&cstart=20&pagesize=80&citation_for_view=jfVyeVsAAAAJ:TFP_iSt0sucC" target="_blank">MM Khan, A Dey, “Selection of optimal processing condition during abrasive wear of in-situ ZA-37/TiCp composites using MCDM technique,” <em>Ceramics International 47 (14), 20090-20107</em> (2021).</a> <span style="font-size:0.8rem; color:#666; font-weight:600;">[Citations: 21]</span></li>
+        </ul>
+
+        <div class="quartile-heading"><span class="badge badge-q2">Q2</span></div>
+        <ul class="custom-list">
+            <li><a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=jfVyeVsAAAAJ&cstart=20&pagesize=80&citation_for_view=jfVyeVsAAAAJ:JV2RwH3_ST0C" target="_blank">A Dey, M Shrivastav, P Kumar, “Optimum performance evaluation during machining of Al6061/cenosphere AMCs using TOPSIS and VIKOR based multi-criteria approach,” <em>Proceedings of the Institution of Mechanical Engineers, Part B: Journal of …</em> (2021).</a> <span style="font-size:0.8rem; color:#666; font-weight:600;">[Citations: 17]</span></li>
+            <li><a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=jfVyeVsAAAAJ&cstart=20&pagesize=80&citation_for_view=jfVyeVsAAAAJ:k_IJM867U9cC" target="_blank">A Dey, KM Pandey, RN Rai, A Khan, A Das, “APPLICATION POTENTIAL OF RESPONSE SURFACE METHOD ON ELECTRO DISCHARGE MACHINING OF AA6061–CENOSPHERE AMCs PREPARED BY COMPOCASTING METHOD,” <em>Surface Review and Letters 28 (07), 2150056</em> (2021).</a> <span style="font-size:0.8rem; color:#666; font-weight:600;">[Citations: 1]</span></li>
+        </ul>
+
+        <div class="quartile-heading"><span class="badge badge-q2" style="background-color:#0277bd;">Peer-Reviewed / Proceedings</span></div>
+        <ul class="custom-list">
+            <li><a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=jfVyeVsAAAAJ&cstart=20&pagesize=80&citation_for_view=jfVyeVsAAAAJ:NMxIlDl6LWMC" target="_blank">AK Dey, A Dey, “Selection of optimal processing condition during removal of methylene blue dye using treated betel nut fibre implementing desirability based RSM approach,” <em>Response surface methodology in Engineering Science</em> (2021).</a> <span style="font-size:0.8rem; color:#666; font-weight:600;">[Citations: 20]</span></li>
+            <li><a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=jfVyeVsAAAAJ&cstart=20&pagesize=80&citation_for_view=jfVyeVsAAAAJ:JoZmwDi-zQgC" target="_blank">AK Dey, A Dey, “Desirability Based RSM Approach,” <em>Response Surface Methodology in Engineering Science, 137</em> (2021).</a></li>
+        </ul>
+
+        <h4>2020</h4>
+        <div class="quartile-heading"><span class="badge badge-q1">Q1</span> High Impact</div>
+        <ul class="custom-list">
+            <li><a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=jfVyeVsAAAAJ&citation_for_view=jfVyeVsAAAAJ:j3f4tGmQtD8C" target="_blank">AD Amit Kumar Dey, “Selection of optimal processing condition during removal of Reactive Red 195 by NaOH treated jute fibre using adsorption,” <em>Groundwater for Sustainable Development</em> (2020).</a> <span style="font-size:0.8rem; color:#666; font-weight:600;">[Citations: 43]</span></li>
+        </ul>
+
+        <div class="quartile-heading"><span class="badge badge-q3">Q3</span></div>
+        <ul class="custom-list">
+            <li><a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=jfVyeVsAAAAJ&cstart=20&pagesize=80&citation_for_view=jfVyeVsAAAAJ:YOwf2qJgpHMC" target="_blank">P Kumar, M Tiwari, ME Makhatha, A Dey, BB Verma, “Effect of rate of loading on jute fibre-reinforced polymer composite,” <em>Transactions of the Indian Institute of Metals 73 (6), 1573-1577</em> (2020).</a> <span style="font-size:0.8rem; color:#666; font-weight:600;">[Citations: 7]</span></li>
+        </ul>
+
+        <div class="quartile-heading"><span class="badge badge-q2" style="background-color:#0277bd;">Peer-Reviewed / Proceedings</span></div>
+        <ul class="custom-list">
+            <li><a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=jfVyeVsAAAAJ&cstart=20&pagesize=80&citation_for_view=jfVyeVsAAAAJ:HE397vMXCloC" target="_blank">AK Dey, A Dey, “Selection of optimal processing condition during removal of Reactive Red 195 by NaOH treated jute fibre using adsorption. Groundw Sustain Dev 12: 100522,”  (2020).</a> <span style="font-size:0.8rem; color:#666; font-weight:600;">[Citations: 5]</span></li>
+        </ul>
+
+        <h4>2018</h4>
+        <div class="quartile-heading"><span class="badge badge-q1">Q1</span> High Impact</div>
+        <ul class="custom-list">
+            <li><a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=jfVyeVsAAAAJ&citation_for_view=jfVyeVsAAAAJ:hqOjcs7Dif8C" target="_blank">A Dey, KM Pandey, “Selection of optimal processing condition during WEDM of compocasted AA6061/cenosphere AMCs based on grey-based hybrid approach,” <em>Materials and Manufacturing Processes 33 (14), 1549-1558</em> (2018).</a> <span style="font-size:0.8rem; color:#666; font-weight:600;">[Citations: 48]</span></li>
+            <li><a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=jfVyeVsAAAAJ&citation_for_view=jfVyeVsAAAAJ:Tyk-4Ss8FVUC" target="_blank">A Dey, KM Pandey, “Wire electrical discharge machining characteristics of AA6061/cenosphere as-cast aluminum matrix composites,” <em>Materials and Manufacturing Processes 33 (12), 1346-1353</em> (2018).</a> <span style="font-size:0.8rem; color:#666; font-weight:600;">[Citations: 33]</span></li>
+            <li><a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=jfVyeVsAAAAJ&citation_for_view=jfVyeVsAAAAJ:iH-uZ7U-co4C" target="_blank">AK Dey, U Kumar, A Dey, “Use of response surface methodology for the optimization of process parameters for the removal of Congo Red by NaOH treated jute fibre,” <em>Desalination and Water Treatment 115, 300-314</em> (2018).</a> <span style="font-size:0.8rem; color:#666; font-weight:600;">[Citations: 28]</span></li>
+        </ul>
+
+        <div class="quartile-heading"><span class="badge badge-q2">Q2</span></div>
+        <ul class="custom-list">
+            <li><a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=jfVyeVsAAAAJ&citation_for_view=jfVyeVsAAAAJ:8k81kl-MbHgC" target="_blank">A Dey, KM Pandey, “Wear behaviour of Mg alloys and their composites–a review,” <em>International journal of materials research 109 (11), 1050-1070</em> (2018).</a> <span style="font-size:0.8rem; color:#666; font-weight:600;">[Citations: 41]</span></li>
+            <li><a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=jfVyeVsAAAAJ&citation_for_view=jfVyeVsAAAAJ:ufrVoPGSRksC" target="_blank">M Rahman, A Dey, KM Pandey, “Machinability of cenosphere particulate–reinforced AA6061 aluminium alloy prepared by compocasting,” <em>Proceedings of the Institution of Mechanical Engineers, Part B: Journal of …</em> (2018).</a> <span style="font-size:0.8rem; color:#666; font-weight:600;">[Citations: 28]</span></li>
+        </ul>
+
+        <div class="quartile-heading"><span class="badge badge-q2" style="background-color:#0277bd;">Peer-Reviewed / Proceedings</span></div>
+        <ul class="custom-list">
+            <li><a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=jfVyeVsAAAAJ&citation_for_view=jfVyeVsAAAAJ:0EnyYjriUFMC" target="_blank">G Manohar, A Dey, KM Pandey, SR Maity, “Fabrication of metal matrix composites by powder metallurgy: a review,” <em>AIP conference proceedings 1952 (1), 020041</em> (2018).</a> <span style="font-size:0.8rem; color:#666; font-weight:600;">[Citations: 130]</span></li>
+            <li><a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=jfVyeVsAAAAJ&citation_for_view=jfVyeVsAAAAJ:MXK_kJrjxJIC" target="_blank">N Niraj, KM Pandey, A Dey, “Tribological behaviour of Magnesium Metal Matrix Composites reinforced with fly ash cenosphere,” <em>Materials Today: Proceedings 5 (9), 20138-20144</em> (2018).</a> <span style="font-size:0.8rem; color:#666; font-weight:600;">[Citations: 39]</span></li>
+            <li><a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=jfVyeVsAAAAJ&citation_for_view=jfVyeVsAAAAJ:3fE2CSJIrl8C" target="_blank">AK Yadav, KM Pandey, A Dey, “Aluminium metal matrix composite with rice husk as reinforcement: a review,” <em>Materials Today: Proceedings 5 (9), 20130-20137</em> (2018).</a> <span style="font-size:0.8rem; color:#666; font-weight:600;">[Citations: 38]</span></li>
+            <li><a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=jfVyeVsAAAAJ&citation_for_view=jfVyeVsAAAAJ:WF5omc3nYNoC" target="_blank">A Dey, VRR Bandi, KM Pandey, “Wire electrical discharge machining characteristics of AA6061/cenosphere aluminium matrix composites using RSM,” <em>Materials Today: Proceedings 5 (1), 1278-1285</em> (2018).</a> <span style="font-size:0.8rem; color:#666; font-weight:600;">[Citations: 31]</span></li>
+            <li><a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=jfVyeVsAAAAJ&cstart=20&pagesize=80&citation_for_view=jfVyeVsAAAAJ:kNdYIx-mwKoC" target="_blank">N Behera, KM Pandey, AB Deoghare, A Dey, “Modeling & Simulation of Interface Stability in Metal Matrix Composites Subjected to off-axis loading using Cohesive Zone Model under Elevated Temperature: A Review,” <em>Materials Today: Proceedings 5 (9), 20085-20091</em> (2018).</a> <span style="font-size:0.8rem; color:#666; font-weight:600;">[Citations: 2]</span></li>
+        </ul>
+
+        <h4>2017</h4>
+        <div class="quartile-heading"><span class="badge badge-q1">Q1</span> High Impact</div>
+        <ul class="custom-list">
+            <li><a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=jfVyeVsAAAAJ&citation_for_view=jfVyeVsAAAAJ:Y0pCki6q_DkC" target="_blank">A Dey, S Debnath, KM Pandey, “Optimization of electrical discharge machining process parameters for Al6061/cenosphere composite using grey-based hybrid approach,” <em>Transactions of Nonferrous Metals Society of China 27 (5), 998-1010</em> (2017).</a> <span style="font-size:0.8rem; color:#666; font-weight:600;">[Citations: 75]</span></li>
+            <li><a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=jfVyeVsAAAAJ&cstart=20&pagesize=80&citation_for_view=jfVyeVsAAAAJ:_xSYboBqXhAC" target="_blank">A DEY, S DEBNATH, KM PANDEY, “采用基于灰度的混合方法优化 Al6061/空心微珠复合材料电火花切割工艺参数 (英文),” <em>Transactions of Nonferrous Metals Society of China 5</em> (2017).</a></li>
+        </ul>
+
+        <div class="quartile-heading"><span class="badge badge-q3">Q3</span></div>
+        <ul class="custom-list">
+            <li><a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=jfVyeVsAAAAJ&cstart=20&pagesize=80&citation_for_view=jfVyeVsAAAAJ:u-x6o8ySG0sC" target="_blank">AK Dey, A Dey, S Sukladas, “3N Formulation of the Horizontal Slice Method in Evaluating Pseudostatic Method for Analysis of Seismic Active Earth Pressure,” <em>International Journal of Geomechanics 17 (1), 04016037</em> (2017).</a> <span style="font-size:0.8rem; color:#666; font-weight:600;">[Citations: 11]</span></li>
+        </ul>
+
+        <div class="quartile-heading"><span class="badge badge-q2" style="background-color:#0277bd;">Peer-Reviewed / Proceedings</span></div>
+        <ul class="custom-list">
+            <li><a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=jfVyeVsAAAAJ&citation_for_view=jfVyeVsAAAAJ:W7OEmFMy1HYC" target="_blank">A Dey, M Debnath, KM Pandey, “Analysis of effect of machining parameters during electrical discharge machining using Taguchi-based multi-objective PSO,” <em>International Journal of Computational Intelligence and Applications 16 (02 …</em> (2017).</a> <span style="font-size:0.8rem; color:#666; font-weight:600;">[Citations: 36]</span></li>
+            <li><a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=jfVyeVsAAAAJ&cstart=20&pagesize=80&citation_for_view=jfVyeVsAAAAJ:D03iK_w7-QYC" target="_blank">A Dey, AVR Rao, SN Mohammad, “Progressive analysis: The effect of different dielectric permittivity on performance of microstrip slot antenna,” <em>2017 International Conference on Wireless Communications, Signal Processing …</em> (2017).</a> <span style="font-size:0.8rem; color:#666; font-weight:600;">[Citations: 1]</span></li>
+            <li><a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=jfVyeVsAAAAJ&cstart=20&pagesize=80&citation_for_view=jfVyeVsAAAAJ:eQOLeE2rZwMC" target="_blank">AK Dey, A Dey, M Brahma, “Design of an overhead Tank for the Newly Built Guest House in CIT (Central Institute of Technology, Assam),” <em>Int. J. Eng. Technol 9, 73-83</em> (2017).</a> <span style="font-size:0.8rem; color:#666; font-weight:600;">[Citations: 1]</span></li>
+            <li><a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=jfVyeVsAAAAJ&cstart=20&pagesize=80&citation_for_view=jfVyeVsAAAAJ:YsMSGLbcyi4C" target="_blank">G Chaudhary, A Dey, AK Dey, S Das, “Delamination analysis of fly drop-off in tapered laminated composite,” <em>Int. J. Eng. Technol 9, 32-36</em> (2017).</a> <span style="font-size:0.8rem; color:#666; font-weight:600;">[Citations: 1]</span></li>
+        </ul>
+
+        <h4>2016</h4>
+        <div class="quartile-heading"><span class="badge badge-q1">Q1</span> High Impact</div>
+        <ul class="custom-list">
+            <li><a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=jfVyeVsAAAAJ&citation_for_view=jfVyeVsAAAAJ:IjCSPb-OGe4C" target="_blank">A Dey, KM Pandey, “Characterization of fly ash and its reinforcement effect on metal matrix composites: A review,” <em>Rev. Adv. Mater. Sci 44 (2), 168-181</em> (2016).</a> <span style="font-size:0.8rem; color:#666; font-weight:600;">[Citations: 77]</span></li>
+        </ul>
+
+        <h4>2015</h4>
+        <div class="quartile-heading"><span class="badge badge-q1">Q1</span> High Impact</div>
+        <ul class="custom-list">
+            <li><a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=jfVyeVsAAAAJ&citation_for_view=jfVyeVsAAAAJ:qjMakFHDy7sC" target="_blank">A Dey, KM Pandey, “Magnesium metal matrix composites-a review,” <em>Rev. Adv. Mater. Sci 42 (1), 58-67</em> (2015).</a> <span style="font-size:0.8rem; color:#666; font-weight:600;">[Citations: 249]</span></li>
+        </ul>
+
+        <div class="quartile-heading"><span class="badge badge-q2" style="background-color:#0277bd;">Peer-Reviewed / Proceedings</span></div>
+        <ul class="custom-list">
+            <li><a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=jfVyeVsAAAAJ&cstart=20&pagesize=80&citation_for_view=jfVyeVsAAAAJ:f2IySw72cVMC" target="_blank">A Dey, N Dashora, “Low latitude ionospheric effects: GNSS positioning at ionospheric anomaly peak region,” <em>2015 International Conference on Computers, Communications, and Systems …</em> (2015).</a> <span style="font-size:0.8rem; color:#666; font-weight:600;">[Citations: 3]</span></li>
+        </ul>
+
+        <h4>2014</h4>
+        <div class="quartile-heading"><span class="badge badge-q2" style="background-color:#0277bd;">Peer-Reviewed / Proceedings</span></div>
+        <ul class="custom-list">
+            <li><a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=jfVyeVsAAAAJ&cstart=20&pagesize=80&citation_for_view=jfVyeVsAAAAJ:KlAtU1dfN6UC" target="_blank">A Dey, SC Saha, KM Pandey, “Study of mechanical properties change during friction stir spot welding of aluminium alloys,” <em>Current Trends in Technology & Sciences 3 (1), 26-33</em> (2014).</a> <span style="font-size:0.8rem; color:#666; font-weight:600;">[Citations: 6]</span></li>
+            <li><a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=jfVyeVsAAAAJ&cstart=20&pagesize=80&citation_for_view=jfVyeVsAAAAJ:u5HHmVD_uO8C" target="_blank">A Dey, KM Pandey, PL Choudhury, “A comparison study of filament wound composite cylindrical shell used in under water vehicle application by finite element method,” <em>ratio 12, 0.253</em> (2014).</a> <span style="font-size:0.8rem; color:#666; font-weight:600;">[Citations: 6]</span></li>
+            <li><a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=jfVyeVsAAAAJ&cstart=20&pagesize=80&citation_for_view=jfVyeVsAAAAJ:Se3iqnhoufwC" target="_blank">A Dey, PL Choudhury, KM Pandey, “A computational study of buckling analysis of filament wound composite pressure vessel subjected to hydrostatic pressure,” <em>Global Journal of Researches In Engineering A: Mechanical and Mechanics …</em> (2014).</a> <span style="font-size:0.8rem; color:#666; font-weight:600;">[Citations: 3]</span></li>
+            <li><a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=jfVyeVsAAAAJ&cstart=20&pagesize=80&citation_for_view=jfVyeVsAAAAJ:UeHWp8X0CEIC" target="_blank">KM Pandey, A Dey, PL Choudhury, “Buckling behaviour of circular ring stiffened filament wound composite pressure hull through finite element analysis,” <em>Applied Mechanics and Materials 656, 288-297</em> (2014).</a> <span style="font-size:0.8rem; color:#666; font-weight:600;">[Citations: 2]</span></li>
+            <li><a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=jfVyeVsAAAAJ&cstart=20&pagesize=80&citation_for_view=jfVyeVsAAAAJ:2osOgNQ5qMEC" target="_blank">A Dey, G Chaudhary, PL Choudhury, KM Pandey, “Study of Post Buckling Behavior of Carbon-Epoxy Composite Pressure Vessel Subjected to Hydrostatic Pressure,” <em>International Journal of Trends in Economics Management & Technology (IJTEMT …</em> (2014).</a></li>
+            <li><a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=jfVyeVsAAAAJ&cstart=20&pagesize=80&citation_for_view=jfVyeVsAAAAJ:d1gkVwhDpl0C" target="_blank">AK Dey, A Dey, S Sukladas, “Analysis of Production of CH4and CO2from Food Waste (MSW) by Anaerobic Digestion (Dry System) Under Mesophilic Condition,”  (2014).</a></li>
+        </ul>
+
+        <h4>2013</h4>
+        <div class="quartile-heading"><span class="badge badge-q2" style="background-color:#0277bd;">Peer-Reviewed / Proceedings</span></div>
+        <ul class="custom-list">
+            <li><a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=jfVyeVsAAAAJ&cstart=20&pagesize=80&citation_for_view=jfVyeVsAAAAJ:Zph67rFs4hoC" target="_blank">AK Yadav, A Dey, “Lateral load capacity of piles in stratified deposits subjected to scour,” <em>Indian Geotechnical Conference: IGC GANGA, 1-10</em> (2013).</a> <span style="font-size:0.8rem; color:#666; font-weight:600;">[Citations: 5]</span></li>
+            <li><a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=jfVyeVsAAAAJ&cstart=20&pagesize=80&citation_for_view=jfVyeVsAAAAJ:9vf0nzSNQJEC" target="_blank">MAS Khan, A Dey, J Athar, AK Sikder, “On calculating polymeric binders’ enthalpy of formations and band gaps with computational methods,” <em>RSC Adv 1 (1)</em> (2013).</a> <span style="font-size:0.8rem; color:#666; font-weight:600;">[Citations: 3]</span></li>
+        </ul>
+
+
+<h3>Reviewer–Journal</h3>
+        <div class="journal-list">
+            <a href="https://advanced.onlinelibrary.wiley.com/journal/15272648">
+                <img src="assets/journals/advanced_engineering_materials.jpg" alt="1">
+            </a>
+            <a href="https://link.springer.com/journal/11665">
+                <img src="assets/journals/Journal_of_Materials_engineering_and_performance.jpg" alt="2">
+            </a>
+            <a href="https://www.sciencedirect.com/journal/composites-science-and-technology">
+                <img src="assets/journals/Composites_Science_and_Technology.jpg" alt="3">
+            </a>
+            <a href="https://www.sciencedirect.com/journal/materials-characterization">
+                <img src="assets/journals/Materials_Characterization.jpg" alt="4">
+            </a>
+            <a href="https://www.sciencedirect.com/journal/next-materials">
+                <img src="assets/journals/Next_Materials.jpg" alt="5">
+            </a>
+            <a href="https://www.sciencedirect.com/journal/surfaces-and-interfaces">
+                <img src="assets/journals/Surfaces_and_Interfaces.jpg" alt="6">
+            </a>
+            <a href="https://www.sciencedirect.com/journal/carbon">
+                <img src="assets/journals/Carbon.jpg" alt="7">
+            </a>
+            <a href="https://www.sciencedirect.com/journal/materials-today-communications">
+                <img src="assets/journals/Materials_Today_Communications.jpg" alt="8">
+            </a>
+            <a href="https://www.sciencedirect.com/journal/optical-materials">
+                <img src="assets/journals/Optical_Materials.jpg" alt="9">
+            </a>
+            <a href="https://www.sciencedirect.com/journal/tribology-international">
+                <img src="assets/journals/Tribology_International.jpg" alt="10">
+            </a>
+            <a href="https://research.com/journal/surface-review-and-letters">
+                <img src="assets/journals/Surface_Review_and_Letters.jpg" alt="11">
+            </a>
+            <a href="https://www.sciencedirect.com/journal/surface-and-coatings-technology">
+                <img src="assets/journals/Surface_and_Coatings_Technology.jpg" alt="12">
+            </a>
+            <a href="https://journals.sagepub.com/home/pib">
+                <img src="assets/journals/Journal_of_Engineering_Manufacture.jpg" alt="13">
+            </a>
+            <a href="https://www.sciencedirect.com/journal/heliyon">
+                <img src="assets/journals/Heliyon.jpg" alt="14">
+            </a>
+            <a href="https://onlinelibrary.wiley.com/journal/15214052">
+                <img src="assets/journals/Material_Science_and_Engineering_Technology.jpg" alt="15">
+            </a>
+            <a href="https://journals.sagepub.com/home/pib">
+                <img src="assets/journals/Part_B_Journal_of_Engineering_Manufacture.jpg" alt="16">
+            </a>
+            <a href="https://link.springer.com/journal/12633">
+                <img src="assets/journals/Silicon.jpg" alt="17">
+            </a>
+            <a
+                href="https://link.springer.com/journal/43578?error=cookies_not_supported&code=4a5f5f3f-bef1-4f13-9ea6-1bbdcc3e088e">
+                <img src="assets/journals/Materials_Research.jpg" alt="18">
+            </a>
+            <a href="https://link.springer.com/journal/40032">
+                <img src="assets/journals/Journal_of_The_Institution_of_Engineers_Series_C.jpg" alt="19">
+            </a>
+            <a href="https://www.sciencedirect.com/journal/results-in-materials">
+                <img src="assets/journals/Results_in_Materials.jpg" alt="20">
+            </a>
+            <a href="https://www.sciencedirect.com/journal/journal-of-materials-research-and-technology">
+                <img src="assets/journals/Journal_of_Materials_Research_and_Technology.jpg" alt="21">
+            </a>
+            <a href="https://onlinelibrary.wiley.com/journal/5928">
+                <img src="assets/journals/Advances_in_Materials_Science_and_Engineering.jpg" alt="22">
+            </a>
+            <a href="https://link.springer.com/journal/12540">
+                <img src="assets/journals/Metals_and_Materials_International.jpg" alt="23">
+            </a>
+            <a href="https://iopscience.iop.org/journal/1402-4896">
+                <img src="assets/journals/Physica_Scripta.jpg" alt="24">
+            </a>
+            <a href="https://www.sciencedirect.com/journal/applied-surface-science">
+                <img src="assets/journals/Applied_Surface_Science.jpg" alt="25">
+            </a>
+            <a href="https://www.sciencedirect.com/journal/journal-of-materials-processing-technology">
+                <img src="assets/journals/Journal_of_Materials_Processing_Technology.jpg" alt="26">
+            </a>
+            <a href="https://www.sciencedirect.com/journal/composites-part-b-engineering">
+                <img src="assets/journals/Composites_Part_B.jpg" alt="27">
+            </a>
+            <a href="https://link.springer.com/journal/11837">
+                <img src="assets/journals/JOM_The_Journal_of_The_Minerals_Metals_and_Materials_Society.jpg" alt="28">
+            </a>
+            <a href="https://www.sciencedirect.com/journal/results-in-surfaces-and-interfaces">
+                <img src="assets/journals/Results_in_surface_and_interfaces.jpg" alt="29">
+            </a>
+            <a
+                href="https://www.researchgate.net/journal/International-Journal-of-Computer-Integrated-Manufacturing-1362-3052">
+                <img src="assets/journals/International_Journal_of_Computer_Integrated_Manufacturing.jpg" alt="30">
+            </a>
+            <a href="https://www.sciencedirect.com/journal/ceramics-international">
+                <img src="assets/journals/Ceramics_International.jpg" alt="31">
+            </a>
+            <a href="https://onlinelibrary.wiley.com/journal/18626270">
+                <img src="assets/journals/physica_status_solidi_(RRL)_Rapid_Research_Letters.jpg" alt="32">
+            </a>
+            <a href="https://www.sciencedirect.com/journal/advances-in-space-research">
+                <img src="assets/journals/Advances_in_Space_Research.jpg" alt="33">
+            </a>
+            <a
+                href="https://link.springer.com/journal/12046?error=cookies_not_supported&code=fac77bfa-9262-4366-9a5e-aa6a5b33d535">
+                <img src="assets/journals/Sadhana.jpg" alt="34">
+            </a>
+            <a href="https://journalsearches.com/journal.php?title=advances+in+materials+and+processing+technologies">
+                <img src="assets/journals/Advances_in_Materials_and_Processing_Technologies.jpg" alt="35">
+            </a>
+        </div>
+
+        <h3>Sponsored Projects</h3>
+        <ul class="custom-list">
+            <li><strong>Principal Investigator (PI)</strong> - Development of Novel WC-Cr2C3-Ni functionally graded
+                composite coatings on Nickel based C-263 super alloy for Nuclear application (SERB-CRG, 36 months)</li>
+            <li><strong>Principal Investigator (PI)</strong> - Effect of Laser surface texturing on the biodegradability
+                of zinc based implant material (24 months)</li>
+            <li><strong>Co-Investigator (Co-PI)</strong> - Design and Development of Novel TiN-CrN-ZrN functionally
+                graded composite coatings for biomedical implant material (SERB-CRG, 36 months)</li>
+        </ul>
+
+        <h3>Patents</h3>
+        <ul class="custom-list">
+            <li><strong>Biodiesel operating engine</strong> - Indian Patent Office, Granted (374118-001)</li>
+            <li><strong>Sand jet machining</strong> - Indian Patent Office, Granted (351279-001)</li>
+            <li><strong>Wifi -based oxygen concentrator</strong> - Indian Patent Office, Granted (346741-001)</li>
+            <li><strong>Ein system zur herstellung eines nanobrennstoffs</strong> - German Patent Office, Granted (20
+                2022 100127.8)</li>
+            <li><strong>System zur hohen adsorptiven entfernung vonkationischem farbstoff unter verwendung von
+                    mitanionischen tensiden modifizierter aktivkohle</strong> - German Patent Office, Granted (20 2023
+                100304.4)</li>
+            <li><strong>A composition and a method of preparing an adsorbent for removing a cationic dye from an aqueous
+                    solution</strong> - South African Patent Office, Granted (02840)</li>
+            <li><strong>A connector assembly device and a system to prolong the life of leds</strong> - Granted
+                (476908-001)</li>
+            <li><strong>Manual Chain Link Bending Tool with Dual Levered Roller Mechanism</strong> - Granted
+                (468460-001)</li>
+            <li><strong>Hand-Operated Chain Link Bending Fixture with Rotary Bearing Assembly</strong> - INDIAN PATENT
+                OFFICE, Published (202531019695A)</li>
+        </ul>
+    </div>
+
+    <footer class="site-footer">
+        <p>&copy; <span id="year"></span> Dr. Abhijit Dey. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
