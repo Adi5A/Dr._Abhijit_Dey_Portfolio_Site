@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Research Interests - Dr. Abhijit Dey</title>
     <style>
         :root {
-            --primary-color: #003366; 
+            --primary-color: #003366;
             --text-color: #333;
             --bg-color: #fff;
             --light-bg: #f4f6f9;
@@ -72,12 +73,15 @@
                 flex-direction: column;
                 text-align: center;
             }
+
             .header-text {
                 order: 2;
             }
+
             #profile {
                 order: 1;
             }
+
             #logo {
                 order: 3;
             }
@@ -88,7 +92,7 @@
             position: sticky;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
 
         nav ul {
@@ -110,7 +114,8 @@
             transition: background 0.3s;
         }
 
-        nav ul li a:hover, nav ul li a.active {
+        nav ul li a:hover,
+        nav ul li a.active {
             background-color: #002244;
         }
 
@@ -146,6 +151,118 @@
             text-decoration: underline;
         }
 
+        /* Interactive Schematic Section Layout */
+        .schematic-interactive-wrapper {
+            display: flex;
+            gap: 2rem;
+            align-items: stretch;
+            margin: 1.5rem 0 2.5rem 0;
+            background-color: #fff;
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+        }
+
+        .schematic-sidebar {
+            flex: 0 0 35%;
+            max-width: 35%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .schematic-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .schematic-item {
+            padding: 0.85rem 1rem;
+            margin-bottom: 0.6rem;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            border-left: 4px solid transparent;
+            background-color: var(--light-bg);
+            color: var(--text-color);
+        }
+
+        .schematic-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .schematic-item strong {
+            display: block;
+            font-size: 0.95rem;
+            font-weight: 600;
+            line-height: 1.4;
+        }
+
+        .schematic-item:hover {
+            background-color: #e6f0fa;
+            color: var(--primary-color);
+        }
+
+        .schematic-item.active {
+            background-color: #e6f0fa;
+            border-left-color: var(--primary-color);
+            color: var(--primary-color);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        }
+
+        /* Display Card on Right */
+        .schematic-display {
+            flex: 1;
+            min-width: 0;
+            display: flex;
+        }
+
+        .schematic-card {
+            width: 100%;
+            min-height: 320px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid var(--primary-color);
+            border-radius: 14px;
+            padding: 1.2rem;
+            background-color: #fafbfc;
+        }
+
+        .schematic-card img {
+            max-width: 100%;
+            max-height: 340px;
+            object-fit: contain;
+            transition: opacity 0.25s ease-in-out;
+            border-radius: 4px;
+        }
+
+        #schematic-caption {
+            margin: 0.8rem 0 0 0;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: #555;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .schematic-interactive-wrapper {
+                flex-direction: column;
+                padding: 1rem;
+            }
+
+            .schematic-sidebar {
+                flex: 1 1 100%;
+                max-width: 100%;
+            }
+        }
+
         footer {
             background-color: var(--light-bg);
             text-align: center;
@@ -157,47 +274,71 @@
         }
     </style>
 </head>
+
 <body>
 
-<header>
-    <img id="profile" src="assets/profile.jpg" alt="Dr. Abhijit Dey">
-    <div class="header-text">
-        <h1>Dr. Abhijit Dey</h1>
-        <p>Assistant Professor, Department of Mechanical Engineering<br>National Institute of Technology (NIT) Jamshedpur</p>
+    <header>
+        <img id="profile" src="assets/profile.jpg" alt="Dr. Abhijit Dey">
+        <div class="header-text">
+            <h1>Dr. Abhijit Dey</h1>
+            <p>Assistant Professor, Department of Mechanical Engineering<br>National Institute of Technology (NIT)
+                Jamshedpur</p>
+        </div>
+        <img id="logo" src="assets/logo.png" alt="NIT Jamshedpur Logo">
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="research-interests.html" class="active">Research Interests</a></li>
+            <li><a href="professional-outreach.html">Professional & Outreach Activities</a></li>
+            <li><a href="research-accomplishments.html">Research Accomplishments</a></li>
+            <li><a href="research-team.html">Research Team</a></li>
+            <li><a href="administrative-activities.html">Administrative Activities</a></li>
+            <li><a href="updates-events.html">Updates & Events</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <h2>Research Interests</h2>
+        <p>Dr. Dey's research spans the boundaries of materials science and mechanical engineering, focusing heavily on
+            enhancing material performance in extreme conditions to address critical challenges in sectors such as
+            aerospace, defense, and biomedical engineering.</p>
+
+        <div class="schematic-interactive-wrapper">
+            <div class="schematic-sidebar">
+                <ul class="schematic-list">
+                    <li class="schematic-item active" data-img="assets/schematics/topic1.jpg">
+                        <strong>Machinability of Composites</strong>
+                    </li>
+                    <li class="schematic-item" data-img="assets/schematics/topic2.jpg">
+                        <strong>Biomaterials</strong>
+                    </li>
+                    <li class="schematic-item" data-img="assets/schematics/topic3.jpg">
+                        <strong>Thin films and coatings for implant applications</strong>
+                    </li>
+                    <li class="schematic-item" data-img="assets/schematics/topic4.jpg">
+                        <strong>Radar-absorbing Coatings(RAC)</strong>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="schematic-display">
+                <div class="schematic-card">
+                    <img id="schematic-viewer-img" src="assets/schematics/topic1.jpg"
+                        alt="Machinability of Composites Schematic">
+                    <p id="schematic-caption">Machinability of Composites</p>
+                </div>
+            </div>
+        </div>
     </div>
-    <img id="logo" src="assets/logo.png" alt="NIT Jamshedpur Logo">
-</header>
 
-<nav>
-    <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="research-interests.html" class="active">Research Interests</a></li>
-        <li><a href="professional-outreach.html">Professional & Outreach Activities</a></li>
-        <li><a href="research-accomplishments.html">Research Accomplishments</a></li>
-        <li><a href="research-team.html">Research Team</a></li>
-        <li><a href="administrative-activities.html">Administrative Activities</a></li>
-        <li><a href="updates-events.html">Updates & Events</a></li>
-    </ul>
-</nav>
+    <footer class="site-footer">
+        <p>&copy; <span id="year"></span> Dr. Abhijit Dey. All rights reserved.</p>
+    </footer>
 
-<div class="container">
-    <h2>Research Interests</h2>
-    <p>Dr. Dey's research spans the boundaries of materials science and mechanical engineering, focusing heavily on enhancing material performance in extreme conditions to address critical challenges in sectors such as aerospace, defense, and biomedical engineering.</p>
-    
-    <ul class="custom-list">
-        <li><strong>Composite Materials:</strong> Design, synthesis, and characterization of Ceramic Matrix Composites (CMCs) and Metal Matrix Composites (MMCs) for high-temperature and structural applications.</li>
-        <li><strong>Composite Thin Films &amp; Coatings:</strong> Functionally gradient and nano-layered coatings (via DC magnetron sputtering, PVD, CVD, and sol-gel) for bio-implants, thermal barrier coatings, and electromagnetic stealth technologies.</li>
-        <li><strong>Machining &amp; Non-Conventional Manufacturing:</strong> Machinability studies, wire-EDM, laser processing, and optimization in cutting of advanced ceramics, hard alloys, and composites.</li>
-        <li><strong>Advanced Materials Processing and Characterization:</strong> Microstructural analysis, nano-indentation, spark plasma sintering (SPS), and friction stir processing (FSP) of advanced engineering alloys.</li>
-        <li><strong>Radar Absorbing &amp; Sensor Materials:</strong> Development of MXene, ferrite-polymer, and nanostructured functional materials for radar absorption, UV detection, and gas sensing.</li>
-    </ul>
-</div>
-
-<footer class="site-footer">
-  <p>&copy; <span id="year"></span> Dr. Abhijit Dey. All rights reserved.</p>
-</footer>
-
-<script src="script.js"></script>
+    <script src="script.js"></script>
 
 </body>
+
 </html>
