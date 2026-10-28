@@ -119,8 +119,9 @@
             background-color: #002244;
         }
 
+        /* Expanded container to push sidebar further left */
         .container {
-            max-width: 1000px;
+            max-width: 1200px;
             margin: 2rem auto;
             padding: 0 2rem;
             min-height: 60vh;
@@ -151,22 +152,19 @@
             text-decoration: underline;
         }
 
-        /* Interactive Schematic Section Layout */
+        /* Removed the card styling from the wrapper to separate the elements */
         .schematic-interactive-wrapper {
             display: flex;
-            gap: 2rem;
-            align-items: stretch;
-            margin: 1.5rem 0 2.5rem 0;
-            background-color: #fff;
-            border: 1px solid var(--border-color);
-            border-radius: 12px;
-            padding: 1.5rem;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+            gap: 4rem; 
+            align-items: center; 
+            justify-content: space-between; 
+            margin: 2.5rem 0;
+            /* Background, borders, and padding removed here */
         }
 
         .schematic-sidebar {
-            flex: 0 0 35%;
-            max-width: 35%;
+            flex: 0 0 25%; /* Keeps the sidebar width constrained on the extreme left */
+            max-width: 25%;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -179,14 +177,14 @@
         }
 
         .schematic-item {
-            padding: 0.85rem 1rem;
-            margin-bottom: 0.6rem;
+            padding: 1rem 1.2rem;
+            margin-bottom: 0.8rem;
             border-radius: 8px;
             cursor: pointer;
             transition: all 0.25s ease;
-            border-left: 4px solid transparent;
             background-color: var(--light-bg);
             color: var(--text-color);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
         }
 
         .schematic-item:last-child {
@@ -207,42 +205,49 @@
 
         .schematic-item.active {
             background-color: #e6f0fa;
-            border-left-color: var(--primary-color);
             color: var(--primary-color);
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
         }
 
-        /* Display Card on Right */
+        /* Display Area takes up the remaining space and centers the card */
         .schematic-display {
-            flex: 1;
-            min-width: 0;
+            flex: 1; 
             display: flex;
+            justify-content: center; /* Absolute center of the remaining space */
+            align-items: center;
         }
 
+        /* The Card is now the only element with a border and white background */
         .schematic-card {
             width: 100%;
-            min-height: 320px;
+            max-width: 600px; 
+            aspect-ratio: 1 / 1; /* Forces the box to be perfectly square */
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
+            justify-content: space-between;
             border: 2px solid var(--primary-color);
             border-radius: 14px;
-            padding: 1.2rem;
-            background-color: #fafbfc;
+            padding: 2rem;
+            background-color: #fff;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+            box-sizing: border-box;
         }
 
         .schematic-card img {
-            max-width: 100%;
-            max-height: 340px;
-            object-fit: contain;
+            width: 100%;
+            height: 85%; /* Utilize majority of the square for the image */
+            object-fit: contain; /* Ensures images fit perfectly inside without cropping */
             transition: opacity 0.25s ease-in-out;
             border-radius: 4px;
         }
 
         #schematic-caption {
-            margin: 0.8rem 0 0 0;
-            font-size: 0.85rem;
+            margin: 0;
+            height: 15%;
+            display: flex;
+            align-items: flex-end;
+            font-size: 0.95rem;
             font-weight: 600;
             color: #555;
             text-align: center;
@@ -251,15 +256,20 @@
         }
 
         /* Mobile Responsiveness */
-        @media (max-width: 768px) {
+        @media (max-width: 850px) {
             .schematic-interactive-wrapper {
                 flex-direction: column;
-                padding: 1rem;
+                gap: 2.5rem;
             }
 
-            .schematic-sidebar {
+            .schematic-sidebar, .schematic-display {
                 flex: 1 1 100%;
                 max-width: 100%;
+            }
+
+            .schematic-card {
+                aspect-ratio: auto; 
+                min-height: 400px;
             }
         }
 
@@ -306,6 +316,7 @@
             aerospace, defense, and biomedical engineering.</p>
 
         <div class="schematic-interactive-wrapper">
+            <!-- Sidebar on extreme left -->
             <div class="schematic-sidebar">
                 <ul class="schematic-list">
                     <li class="schematic-item active" data-img="assets/schematics/topic1.jpg">
@@ -322,7 +333,8 @@
                     </li>
                 </ul>
             </div>
-
+            
+            <!-- Image box exactly in the center of remaining space -->
             <div class="schematic-display">
                 <div class="schematic-card">
                     <img id="schematic-viewer-img" src="assets/schematics/topic1.jpg"
