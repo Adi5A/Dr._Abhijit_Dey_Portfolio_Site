@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Administrative Activities - Dr. Abhijit Dey</title>
     <style>
         :root {
-            --primary-color: #003366; 
+            --primary-color: #003366;
             --text-color: #333;
             --bg-color: #fff;
             --light-bg: #f4f6f9;
@@ -72,12 +73,15 @@
                 flex-direction: column;
                 text-align: center;
             }
+
             .header-text {
                 order: 2;
             }
+
             #profile {
                 order: 1;
             }
+
             #logo {
                 order: 3;
             }
@@ -88,7 +92,7 @@
             position: sticky;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
 
         nav ul {
@@ -110,7 +114,8 @@
             transition: background 0.3s;
         }
 
-        nav ul li a:hover, nav ul li a.active {
+        nav ul li a:hover,
+        nav ul li a.active {
             background-color: #002244;
         }
 
@@ -157,48 +162,51 @@
         }
     </style>
 </head>
+
 <body>
 
-<header>
-    <img id="profile" src="assets/profile.jpg" alt="Dr. Abhijit Dey">
-    <div class="header-text">
-        <h1>Dr. Abhijit Dey</h1>
-        <p>Assistant Professor, Department of Mechanical Engineering<br>National Institute of Technology (NIT) Jamshedpur</p>
+    <header>
+        <img id="profile" src="assets/profile.jpg" alt="Dr. Abhijit Dey">
+        <div class="header-text">
+            <h1>Dr. Abhijit Dey</h1>
+            <p>Assistant Professor, Department of Mechanical Engineering<br>National Institute of Technology (NIT)
+                Jamshedpur</p>
+        </div>
+        <img id="logo" src="assets/logo.png" alt="NIT Jamshedpur Logo">
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="research-interests.html">Research Interests</a></li>
+            <li><a href="research-accomplishments.html">Research Accomplishments</a></li>
+            <li><a href="research-team.html">Research Team</a></li>
+            <li><a href="professional-outreach.html">Professional & Outreach Activities</a></li>
+            <li><a href="administrative-activities.html">Administrative Activities</a></li>
+            <li><a href="updates-events.html">Updates & Events</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <h2>Administrative Activities</h2>
+        <ul class="custom-list">
+            <li><strong>NIRF Convener</strong> - Institute Level (December 2025 to Present)</li>
+            <li><strong>Twinning In-Charge</strong> - Institute Level (03.04.2019 – 12.12.2024)</li>
+        </ul>
+
+        <h2>Committee Memberships</h2>
+        <ul class="custom-list">
+            <li><strong>Member, NIRF Committee</strong> - Institute Level (01.09.2020 – 12.11.2024)</li>
+            <li><strong>Member, NBA Committee</strong> - Department Level (03.07.2019 – 12.11.2024)</li>
+        </ul>
     </div>
-    <img id="logo" src="assets/logo.png" alt="NIT Jamshedpur Logo">
-</header>
 
-<nav>
-    <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="research-interests.html">Research Interests</a></li>
-        <li><a href="professional-outreach.html">Professional & Outreach Activities</a></li>
-        <li><a href="research-accomplishments.html">Research Accomplishments</a></li>
-        <li><a href="research-team.html">Research Team</a></li>
-        <li><a href="administrative-activities.html" class="active">Administrative Activities</a></li>
-        <li><a href="updates-events.html">Updates & Events</a></li>
-    </ul>
-</nav>
+    <footer class="site-footer">
+        <p>&copy; <span id="year"></span> Dr. Abhijit Dey. All rights reserved.</p>
+    </footer>
 
-<div class="container">
-    <h2>Administrative Activities</h2>
-    <ul class="custom-list">
-        <li><strong>NIRF Convener</strong> - Institute Level (December 2025 to Present)</li>
-        <li><strong>Twinning In-Charge</strong> - Institute Level (03.04.2019 – 12.12.2024)</li>
-    </ul>
-    
-    <h2>Committee Memberships</h2>
-    <ul class="custom-list">
-        <li><strong>Member, NIRF Committee</strong> - Institute Level (01.09.2020 – 12.11.2024)</li>
-        <li><strong>Member, NBA Committee</strong> - Department Level (03.07.2019 – 12.11.2024)</li>
-    </ul>
-</div>
-
-<footer class="site-footer">
-  <p>&copy; <span id="year"></span> Dr. Abhijit Dey. All rights reserved.</p>
-</footer>
-
-<script src="script.js"></script>
+    <script src="script.js"></script>
 
 </body>
+
 </html>

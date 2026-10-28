@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Professional & Outreach - Dr. Abhijit Dey</title>
     <style>
         :root {
-            --primary-color: #003366; 
+            --primary-color: #003366;
             --text-color: #333;
             --bg-color: #fff;
             --light-bg: #f4f6f9;
@@ -72,12 +73,15 @@
                 flex-direction: column;
                 text-align: center;
             }
+
             .header-text {
                 order: 2;
             }
+
             #profile {
                 order: 1;
             }
+
             #logo {
                 order: 3;
             }
@@ -88,7 +92,7 @@
             position: sticky;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
 
         nav ul {
@@ -110,7 +114,8 @@
             transition: background 0.3s;
         }
 
-        nav ul li a:hover, nav ul li a.active {
+        nav ul li a:hover,
+        nav ul li a.active {
             background-color: #002244;
         }
 
@@ -157,62 +162,76 @@
         }
     </style>
 </head>
+
 <body>
 
-<header>
-    <img id="profile" src="assets/profile.jpg" alt="Dr. Abhijit Dey">
-    <div class="header-text">
-        <h1>Dr. Abhijit Dey</h1>
-        <p>Assistant Professor, Department of Mechanical Engineering<br>National Institute of Technology (NIT) Jamshedpur</p>
+    <header>
+        <img id="profile" src="assets/profile.jpg" alt="Dr. Abhijit Dey">
+        <div class="header-text">
+            <h1>Dr. Abhijit Dey</h1>
+            <p>Assistant Professor, Department of Mechanical Engineering<br>National Institute of Technology (NIT)
+                Jamshedpur</p>
+        </div>
+        <img id="logo" src="assets/logo.png" alt="NIT Jamshedpur Logo">
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="research-interests.html">Research Interests</a></li>
+            <li><a href="research-accomplishments.html">Research Accomplishments</a></li>
+            <li><a href="research-team.html">Research Team</a></li>
+            <li><a href="professional-outreach.html">Professional & Outreach Activities</a></li>
+            <li><a href="administrative-activities.html">Administrative Activities</a></li>
+            <li><a href="updates-events.html">Updates & Events</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <h2>Professional Memberships</h2>
+        <ul class="custom-list">
+            <li>Life Member of <strong>The Society of Polymer Science, India</strong></li>
+            <li>Member of <strong>The Institute of Engineers (India)</strong></li>
+            <li>Member of <strong>ASME (American Society of Mechanical Engineers)</strong></li>
+        </ul>
+
+        <h2>Outreach Activities & Workshops Organized</h2>
+        <ul class="custom-list">
+            <li><strong>Coordinator</strong> - One Week Short-Term Training Program on "Additive Manufacturing from 3D
+                Printing to the Factory Floor" (August 31 - Sept 4, 2020) under TEQIP-III</li>
+            <li><strong>Coordinator</strong> - Five-days short term course on "Computational Fluid Dynamics" (August
+                17-22, 2020) under TEQIP-III</li>
+            <li><strong>Coordinator</strong> - One Week Short-Term Training Program on "ADVANCED MATERIALS PROCESSING
+                AND CHARACTERIZATION" (July 22-26, 2019) under TEQIP-III</li>
+            <li><strong>Coordinator</strong> - 2ND INTERNATIONAL INDO-TUNISIAN SYMPOSIUM ON ‘TRIBOLOGY FOR
+                SUSTAINABILITY’ (June 17-21, 2019) under TEQIP-III</li>
+            <li><strong>Coordinator</strong> - Three days Short Term Course on ‘Nano-Physics’ (April 6-8, 2019) under
+                Twinning Activity</li>
+            <li><strong>Coordinator</strong> - Three days Short Term Course on “Computer Programming” (May 17-19, 2019)
+                under Twinning Activity</li>
+        </ul>
+
+        <h2>Academic Outreach & Evaluator Roles</h2>
+        <ul class="custom-list">
+            <li><strong>Thesis Examiner:</strong> Doctoral and Master's thesis examiner of reputed Institutes and
+                Universities.</li>
+            <li><strong>Book Reviewer:</strong> Reviewed books on advanced materials and mechanical engineering for
+                reputed international publishers.</li>
+            <li><strong>Examination Expert:</strong> Paper setter of Public Service Commission for competitive
+                engineering examinations.</li>
+            <li><strong>Curriculum & Examination:</strong> Paper setter and evaluator for UG/PG level engineering
+                subjects for leading universities.</li>
+            <li><strong>Keynote & Session Chair:</strong> Session chair, co-chair, and invited speaker at national and
+                international conferences in manufacturing and materials.</li>
+        </ul>
     </div>
-    <img id="logo" src="assets/logo.png" alt="NIT Jamshedpur Logo">
-</header>
 
-<nav>
-    <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="research-interests.html">Research Interests</a></li>
-        <li><a href="professional-outreach.html" class="active">Professional & Outreach Activities</a></li>
-        <li><a href="research-accomplishments.html">Research Accomplishments</a></li>
-        <li><a href="research-team.html">Research Team</a></li>
-        <li><a href="administrative-activities.html">Administrative Activities</a></li>
-        <li><a href="updates-events.html">Updates & Events</a></li>
-    </ul>
-</nav>
+    <footer class="site-footer">
+        <p>&copy; <span id="year"></span> Dr. Abhijit Dey. All rights reserved.</p>
+    </footer>
 
-<div class="container">
-    <h2>Professional Memberships</h2>
-    <ul class="custom-list">
-        <li>Life Member of <strong>The Society of Polymer Science, India</strong></li>
-        <li>Member of <strong>The Institute of Engineers (India)</strong></li>
-        <li>Member of <strong>ASME (American Society of Mechanical Engineers)</strong></li>
-    </ul>
-
-    <h2>Outreach Activities & Workshops Organized</h2>
-    <ul class="custom-list">
-        <li><strong>Coordinator</strong> - One Week Short-Term Training Program on "Additive Manufacturing from 3D Printing to the Factory Floor" (August 31 - Sept 4, 2020) under TEQIP-III</li>
-        <li><strong>Coordinator</strong> - Five-days short term course on "Computational Fluid Dynamics" (August 17-22, 2020) under TEQIP-III</li>
-        <li><strong>Coordinator</strong> - One Week Short-Term Training Program on "ADVANCED MATERIALS PROCESSING AND CHARACTERIZATION" (July 22-26, 2019) under TEQIP-III</li>
-        <li><strong>Coordinator</strong> - 2ND INTERNATIONAL INDO-TUNISIAN SYMPOSIUM ON ‘TRIBOLOGY FOR SUSTAINABILITY’ (June 17-21, 2019) under TEQIP-III</li>
-        <li><strong>Coordinator</strong> - Three days Short Term Course on ‘Nano-Physics’ (April 6-8, 2019) under Twinning Activity</li>
-        <li><strong>Coordinator</strong> - Three days Short Term Course on “Computer Programming” (May 17-19, 2019) under Twinning Activity</li>
-    </ul>
-
-    <h2>Academic Outreach & Evaluator Roles</h2>
-    <ul class="custom-list">
-        <li><strong>Thesis Examiner:</strong> Doctoral and Master's thesis examiner of reputed Institutes and Universities.</li>
-        <li><strong>Book Reviewer:</strong> Reviewed books on advanced materials and mechanical engineering for reputed international publishers.</li>
-        <li><strong>Examination Expert:</strong> Paper setter of Public Service Commission for competitive engineering examinations.</li>
-        <li><strong>Curriculum & Examination:</strong> Paper setter and evaluator for UG/PG level engineering subjects for leading universities.</li>
-        <li><strong>Keynote & Session Chair:</strong> Session chair, co-chair, and invited speaker at national and international conferences in manufacturing and materials.</li>
-    </ul>
-</div>
-
-<footer class="site-footer">
-  <p>&copy; <span id="year"></span> Dr. Abhijit Dey. All rights reserved.</p>
-</footer>
-
-<script src="script.js"></script>
+    <script src="script.js"></script>
 
 </body>
+
 </html>
